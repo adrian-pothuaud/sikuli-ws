@@ -6,6 +6,20 @@ from sikuli import *
 
 import os
 
+DEFAULT_SCRIPT_BASE = [
+    r"# -*- coding:utf-8 -*-",
+    r"",
+    r"'''DOCUMENT THIS MODULE HERE'''",
+    r"",
+    r"from sikuli import *",
+    "",
+    r"def default_fun():",
+    "\t'''DOCUMENT THIS FUNCTION HERE'''",
+    "\tprint('Hello Sikuli, I am scaffolded')",
+    r"",
+    r"default_fun()"
+]
+
 def create_sikuli_script(path, content=None):
     '''create a complete sikuli script'''
     print('creation of a sikuli script at {}'.format(path))
@@ -16,21 +30,15 @@ def create_sikuli_script(path, content=None):
     os.system('touch {}{}{}.py'.format(path, os.sep, name))
     os.system('touch {}{}{}.html'.format(path, os.sep, name))
     if content:
-        with open('{}{}{}.py'.format(path, os.sep, name), 'w'):
+        with open('{}{}{}.py'.format(path, os.sep, name), 'w') as fout:
             for l in content:
-                write(l)
+                fout.write("{}\n".format(l))
 
 if __name__ == '__main__':
 
-    import path_utils
+    import sys
 
-    new_script = os.path.join(path_utils.get_parent_dirname(getBundlePath(), 2), "specs", "AutoHello")
-    content = (
-        "# -*- coding:utf-8 -*-",
-        "",
-        "'''{}'''".format(new_script),
-        "",
-        "print('Hello Sikuli, I am scaffolded')",
-        ""
-    )
-    create_sikuli_script(new_script, content)
+    if not '.sikuli' in sys.argv[-1]:
+        create_sikuli_script(sys.argv[-1], DEFAULT_SCRIPT_BASE)
+    else:
+        raise ValueError("missing argument for module name, usage: 'java -jar sikulix.jar -r generate.sikuli --args module_name'")
