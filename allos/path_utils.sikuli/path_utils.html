@@ -1,0 +1,156 @@
+
+<html>
+   <head>
+      <style type="text/css">
+         .sikuli-code {
+            font-size: 20px;
+            font-family: "Osaka-mono", Monospace;
+            line-height: 1.5em;
+            display:table-cell;
+            white-space: pre-wrap;       /* css-3 */
+            white-space: -moz-pre-wrap !important;  /* Mozilla, since 1999 */
+            white-space: -pre-wrap;      /* Opera 4-6 */
+            white-space: -o-pre-wrap;    /* Opera 7 */
+            word-wrap: break-word;       /* Internet Explorer 5.5+ */
+            width: 99%;   /* remove horizontal scroll-bar when viewing in IE7 */
+         }
+         .sikuli-code img {
+            vertical-align: middle;
+            margin: 2px;
+            border: 1px solid #ccc;
+            padding: 2px;
+            -moz-border-radius: 5px;
+            -webkit-border-radius: 5px;
+            -moz-box-shadow: 1px 1px 1px gray;
+            -webkit-box-shadow: 1px 1px 2px gray;
+         }
+         .kw {
+            color: blue;
+         }
+         .skw {
+            color: rgb(63, 127, 127);
+         }
+
+         .str {
+            color: rgb(128, 0, 0);
+         }
+
+         .dig {
+            color: rgb(128, 64, 0);
+         }
+
+         .cmt {
+            color: rgb(200, 0, 200);
+         }
+
+         h2 {
+            display: inline;
+            font-weight: normal;
+         }
+
+         .info {
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+            display: none;
+         }
+
+         a {
+            color: #9D2900;
+         }
+
+         body {
+            font-family: "Trebuchet MS", Arial, Sans-Serif;
+         }
+
+      </style>
+   </head>
+<body>
+<div class="info">
+<h2>path_utils.sikuli</h2> <a href="path_utils.zip">(Download this script)</a>
+</div>
+<pre class="sikuli-code">
+<span class="cmt"># -*- coding:utf-8 -*-</span>
+
+<span class="str">'''
+Reusable functions to play with execution path and image path of Sikuli
+'''</span>
+
+<span class="kw">from</span> sikuli <span class="kw">import</span> *
+
+<span class="kw">import</span> sys, os
+
+<span class="kw">import</span> settings
+
+<span class="kw">def</span> get_ws_root_path():
+    <span class="str">'''Returns path to the Sikuli workspace'''</span>
+    path = getBundlePath()
+    <span class="kw">while</span> <span class="kw">not</span> settings.root_name <span class="kw">in</span> path.split(os.sep)[-<span class="dig">1</span>]:
+        path = get_parent_dirname(path)
+    <span class="kw">return</span> path
+
+<span class="kw">def</span> get_parent_dirname(path, level = <span class="dig">1</span>):
+    <span class="str">'''return the parent of path'''</span>
+    parent = path
+    <span class="kw">for</span> i <span class="kw">in</span> range(level):
+        parent = os.path.dirname(parent)
+    <span class="kw">return</span> parent
+
+<span class="kw">def</span> print_execution_path():
+    <span class="str">'''print execution path'''</span>
+    <span class="kw">print</span>(<span class="str">"\nActual execution path is :\n{"</span>)
+    <span class="kw">for</span> p <span class="kw">in</span> sys.path:
+        <span class="kw">print</span>(<span class="str">"\t{},"</span>.format(p))
+    <span class="kw">print</span>(<span class="str">"}\n"</span>)
+
+<span class="kw">def</span> add_execution_path(new_path):
+    <span class="str">'''add new path(s) to execution'''</span>
+    <span class="kw">if</span> isinstance(new_path, str) <span class="kw">or</span> isinstance(new_path, unicode):
+        new_path = [new_path]
+    <span class="kw">if</span> isinstance(new_path, list):
+        <span class="kw">for</span> p <span class="kw">in</span> new_path:
+            <span class="kw">print</span>(<span class="str">"\nTrying to add {} to execution path"</span>.format(p))
+            <span class="kw">if</span> <span class="kw">not</span> p <span class="kw">in</span> sys.path:
+                sys.path.append(p)
+                <span class="kw">print</span>(<span class="str">"PATH ADDED !\n"</span>)
+            <span class="kw">else</span>:
+                <span class="kw">print</span>(<span class="str">"ALREADY THERE ! nothing done\n"</span>)
+    <span class="kw">else</span>:
+        <span class="kw">raise</span> ValueError(<span class="str">"'new_path' parameter : {}, is neither str nor list !"</span>.format(new_path))
+
+<span class="kw">def</span> set_execution_path(path):
+    <span class="str">'''USE WITH CAUTION: set execution path to the given path'''</span>
+    <span class="kw">pass</span>
+
+<span class="kw">def</span> print_image_path():
+    <span class="str">'''print image path'''</span>
+    <span class="kw">print</span>(<span class="str">"\nActual image path is :\n{"</span>)
+    <span class="kw">for</span> p <span class="kw">in</span> getImagePath():
+        <span class="kw">print</span>(<span class="str">"\t{},"</span>.format(p))
+    <span class="kw">print</span>(<span class="str">"}\n"</span>)
+
+<span class="kw">def</span> add_image_path(new_path):
+    <span class="str">'''add new path(s) to image path'''</span>
+    <span class="kw">if</span> isinstance(new_path, str) <span class="kw">or</span> isinstance(new_path, unicode):
+        new_path = [new_path]
+    <span class="kw">if</span> isinstance(new_path, list):
+        <span class="kw">for</span> p <span class="kw">in</span> new_path:
+            <span class="kw">print</span>(<span class="str">"\nTrying to add {} to image path"</span>.format(p))
+            <span class="kw">if</span> <span class="kw">not</span> p <span class="kw">in</span> getImagePath():
+                addImagePath(p)
+                <span class="kw">print</span>(<span class="str">"PATH ADDED !\n"</span>)
+            <span class="kw">else</span>:
+                <span class="kw">print</span>(<span class="str">"ALREADY THERE ! nothing done\n"</span>)
+    <span class="kw">else</span>:
+        <span class="kw">raise</span> ValueError(<span class="str">"'new_path' parameter : {}, is neither str nor list !"</span>.format(new_path))
+
+<span class="kw">def</span> set_image_path(path):
+    <span class="str">'''USE WITH CAUTION: set image path to the given path'''</span>
+    <span class="kw">pass</span>
+
+<span class="kw">if</span> __name__ == <span class="str">'__main__'</span>:
+
+    <span class="kw">print</span>(get_ws_root_path())
+</pre>
+</body>
+</html>

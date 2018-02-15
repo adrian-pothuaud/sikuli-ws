@@ -1,0 +1,129 @@
+
+<html>
+   <head>
+      <style type="text/css">
+         .sikuli-code {
+            font-size: 20px;
+            font-family: "Osaka-mono", Monospace;
+            line-height: 1.5em;
+            display:table-cell;
+            white-space: pre-wrap;       /* css-3 */
+            white-space: -moz-pre-wrap !important;  /* Mozilla, since 1999 */
+            white-space: -pre-wrap;      /* Opera 4-6 */
+            white-space: -o-pre-wrap;    /* Opera 7 */
+            word-wrap: break-word;       /* Internet Explorer 5.5+ */
+            width: 99%;   /* remove horizontal scroll-bar when viewing in IE7 */
+         }
+         .sikuli-code img {
+            vertical-align: middle;
+            margin: 2px;
+            border: 1px solid #ccc;
+            padding: 2px;
+            -moz-border-radius: 5px;
+            -webkit-border-radius: 5px;
+            -moz-box-shadow: 1px 1px 1px gray;
+            -webkit-box-shadow: 1px 1px 2px gray;
+         }
+         .kw {
+            color: blue;
+         }
+         .skw {
+            color: rgb(63, 127, 127);
+         }
+
+         .str {
+            color: rgb(128, 0, 0);
+         }
+
+         .dig {
+            color: rgb(128, 64, 0);
+         }
+
+         .cmt {
+            color: rgb(200, 0, 200);
+         }
+
+         h2 {
+            display: inline;
+            font-weight: normal;
+         }
+
+         .info {
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+            display: none;
+         }
+
+         a {
+            color: #9D2900;
+         }
+
+         body {
+            font-family: "Trebuchet MS", Arial, Sans-Serif;
+         }
+
+      </style>
+   </head>
+<body>
+<div class="info">
+<h2>applications.sikuli</h2> <a href="applications.zip">(Download this script)</a>
+</div>
+<pre class="sikuli-code">
+<span class="cmt"># -*- coding:utf-8 -*-</span>
+
+<span class="str">'''Control Applications with Sikuli features
+https://github.com/RaiMan/SikuliX-2014/blob/develop/API/src/main/java/org/sikuli/script/App.java
+App class needs application path to be executed so final functions will be declared in os specific libraries
+in this module we define os independent reusable behaviors'''</span>
+
+<span class="kw">from</span> sikuli <span class="kw">import</span> getBundlePath, Key, Env, App
+
+<span class="kw">import</span> os, glob
+
+<span class="cmt"># import modules</span>
+<span class="kw">import</span> path_utils, image_utils
+
+<span class="kw">def</span> launch_app(app_name, wait_img=False, timeout=<span class="dig">10</span>):
+    <span class="str">'''Process to launch an app (os independent)'''</span>
+    ws_root = path_utils.get_ws_root_path()
+    os_path = None
+    os_img_lib = None
+    <span class="kw">if</span> Env.isWindows():
+        os_path = os.path.join(ws_root, <span class="str">'win'</span>)
+        os_img_lib = <span class="str">'win'</span>
+        maximize_shortcut = (Key.UP, Key.WIN)
+    <span class="kw">elif</span> Env.isMac():
+        os_path = os.path.join(ws_root, <span class="str">'osx'</span>)
+        os_img_lib = <span class="str">'osx'</span>
+        maximize_shortcut = None
+    <span class="kw">elif</span> Env.isLinux():
+        os_path = os.path.join(ws_root, <span class="str">'linux'</span>)
+        os_img_lib = <span class="str">'linux'</span>
+        maximize_shortcut = None
+    path_utils.add_execution_path(os_path)
+    <span class="kw">import</span> os_applications
+    app = App(os_applications.APPS[app_name][<span class="str">"path"</span>])
+    <span class="kw">if</span> <span class="kw">not</span> App(app_name).isRunning():
+        app.open()
+    <span class="kw">else</span>:
+        app.focus()
+    <span class="kw">if</span> wait_img:
+        <span class="kw">print</span>(<span class="str">"Waiting for app to be openned..."</span>)
+        img_lib = os.path.join(
+            path_utils.get_parent_dirname(getBundlePath(), <span class="dig">2</span>),
+            <span class="str">"imgs"</span>
+        )
+        imgs = glob.glob(
+            <img src="{}{}start{}*.png" />.format(
+                os.path.join(img_lib, os_img_lib, app_name.replace(<span class="str">' '</span>, <span class="str">'_'</span>).replace(<span class="str">'+'</span>, <span class="str">'p'</span>)),
+                os.sep,
+                os.sep
+            )
+        )
+        image_utils.wait_all(imgs)
+        <span class="kw">print</span>(<span class="str">"App is openned !"</span>)
+    <span class="skw">type</span>(maximize_shortcut)
+</pre>
+</body>
+</html>

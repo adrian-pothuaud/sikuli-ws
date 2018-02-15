@@ -4,7 +4,7 @@
 
 from sikuli import *
 
-import os, sys, unittest
+import os, sys, unittest, HTMLTestRunner
 
 # find path of [ROOT]/allos folder
 allos_path = this_path = getBundlePath()
@@ -66,5 +66,23 @@ class PathUtilsTestCase(unittest.TestCase):
         self.assertIn(new_path, getImagePath())
 
 tests = unittest.TestLoader().loadTestsFromTestCase(PathUtilsTestCase)
-runner = unittest.TextTestRunner()
-runner.run(tests)
+out_folder = os.path.join(
+    path_utils.get_ws_root_path(),
+    "out",
+    "test_reports",
+    "allos",
+    "path_utils_tests"
+)
+now = datetime.datetime.now()
+filename = "{}-{}-{}.{}h{}.html".format(
+    now.year,
+    now.month,
+    now.day,
+    now.hour,
+    now.minute
+)
+with open(os.path.join(out_folder, filename), 'w') as rf:
+    runner = HTMLTestRunner.HTMLTestRunner(
+        stream = rf
+    )
+    runner.run(tests)

@@ -14,7 +14,7 @@ import path_utils, image_utils
 
 def launch_app(app_name, wait_img=False, timeout=10):
     '''Process to launch an app (os independent)'''
-    ws_root = path_utils.get_parent_dirname(getBundlePath(), 2)
+    ws_root = path_utils.get_ws_root_path()
     os_path = None
     os_img_lib = None
     if Env.isWindows():
@@ -51,4 +51,4 @@ def launch_app(app_name, wait_img=False, timeout=10):
         )
         image_utils.wait_all(imgs)
         print("App is openned !")
-    type(*maximize_shortcut)
+    type(maximize_shortcut)

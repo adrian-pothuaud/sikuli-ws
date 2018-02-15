@@ -8,7 +8,16 @@ from sikuli import *
 
 import sys, os
 
-def get_parent_dirname(path, level):
+import settings
+
+def get_ws_root_path():
+    '''Returns path to the Sikuli workspace'''
+    path = getBundlePath()
+    while not settings.root_name in path.split(os.sep)[-1]:
+        path = get_parent_dirname(path)
+    return path
+
+def get_parent_dirname(path, level = 1):
     '''return the parent of path'''
     parent = path
     for i in range(level):
@@ -66,3 +75,7 @@ def add_image_path(new_path):
 def set_image_path(path):
     '''USE WITH CAUTION: set image path to the given path'''
     pass
+
+if __name__ == '__main__':
+
+    print(get_ws_root_path())
