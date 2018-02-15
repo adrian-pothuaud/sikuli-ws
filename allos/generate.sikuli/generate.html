@@ -1,0 +1,111 @@
+
+<html>
+   <head>
+      <style type="text/css">
+         .sikuli-code {
+            font-size: 20px;
+            font-family: "Osaka-mono", Monospace;
+            line-height: 1.5em;
+            display:table-cell;
+            white-space: pre-wrap;       /* css-3 */
+            white-space: -moz-pre-wrap !important;  /* Mozilla, since 1999 */
+            white-space: -pre-wrap;      /* Opera 4-6 */
+            white-space: -o-pre-wrap;    /* Opera 7 */
+            word-wrap: break-word;       /* Internet Explorer 5.5+ */
+            width: 99%;   /* remove horizontal scroll-bar when viewing in IE7 */
+         }
+         .sikuli-code img {
+            vertical-align: middle;
+            margin: 2px;
+            border: 1px solid #ccc;
+            padding: 2px;
+            -moz-border-radius: 5px;
+            -webkit-border-radius: 5px;
+            -moz-box-shadow: 1px 1px 1px gray;
+            -webkit-box-shadow: 1px 1px 2px gray;
+         }
+         .kw {
+            color: blue;
+         }
+         .skw {
+            color: rgb(63, 127, 127);
+         }
+
+         .str {
+            color: rgb(128, 0, 0);
+         }
+
+         .dig {
+            color: rgb(128, 64, 0);
+         }
+
+         .cmt {
+            color: rgb(200, 0, 200);
+         }
+
+         h2 {
+            display: inline;
+            font-weight: normal;
+         }
+
+         .info {
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+            display: none;
+         }
+
+         a {
+            color: #9D2900;
+         }
+
+         body {
+            font-family: "Trebuchet MS", Arial, Sans-Serif;
+         }
+
+      </style>
+   </head>
+<body>
+<div class="info">
+<h2>generate.sikuli</h2> <a href="generate.zip">(Download this script)</a>
+</div>
+<pre class="sikuli-code">
+<span class="cmt"># -*- coding:utf-8 -*-</span>
+
+<span class="str">'''This script is a module for scripts scaffolding for sikuli framework/scenarios'''</span>
+
+<span class="kw">from</span> sikuli <span class="kw">import</span> *
+
+<span class="kw">import</span> os
+
+<span class="kw">def</span> create_sikuli_script(path, content=None):
+    <span class="str">'''create a complete sikuli script'''</span>
+    <span class="kw">print</span>(<span class="str">'creation of a sikuli script at {}'</span>.format(path))
+    <span class="kw">if</span> <span class="kw">not</span> <span class="str">'.sikuli'</span> <span class="kw">in</span> path:
+        path = <span class="str">u'{}.sikuli'</span>.format(path)
+    name = path.split(<span class="str">'.'</span>)[-<span class="dig">2</span>].split(os.sep)[-<span class="dig">1</span>]
+    os.system(<span class="str">'mkdir {}'</span>.format(path))
+    os.system(<span class="str">'touch {}{}{}.py'</span>.format(path, os.sep, name))
+    os.system(<span class="str">'touch {}{}{}.html'</span>.format(path, os.sep, name))
+    <span class="kw">if</span> content:
+        <span class="kw">with</span> open(<span class="str">'{}{}{}.py'</span>.format(path, os.sep, name), <span class="str">'w'</span>):
+            <span class="kw">for</span> l <span class="kw">in</span> content:
+                write(l)
+
+<span class="kw">if</span> __name__ == <span class="str">'__main__'</span>:
+
+    <span class="kw">import</span> path_utils
+
+    new_script = os.path.join(path_utils.get_parent_dirname(getBundlePath(), <span class="dig">2</span>), <span class="str">"specs"</span>, <span class="str">"AutoHello"</span>)
+    content = (
+        <span class="str">"# -*- coding:utf-8 -*-"</span>,
+        <span class="str">""</span>,
+        <span class="str">"'''{}'''"</span>.format(new_script),
+        <span class="str">""</span>,
+        <span class="str">"print('Hello Sikuli, I am scaffolded')"</span>,
+        <span class="str">""</span>
+    )
+    create_sikuli_script(new_script, content)
+</pre>
+</body>
+</html>
