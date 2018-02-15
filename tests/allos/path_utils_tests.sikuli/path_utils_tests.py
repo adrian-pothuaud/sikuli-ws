@@ -16,7 +16,8 @@ if not allos_path in sys.path:
     sys.path.append(allos_path)
 # import path_utils module
 import path_utils
-
+print('a')
+print(path_utils)
 class PathUtilsTestCase(unittest.TestCase):
     @classmethod
     def setUpClass(self):
@@ -64,8 +65,9 @@ class PathUtilsTestCase(unittest.TestCase):
         self.assertNotEqual(len(old_path), len(getImagePath()))
         self.assertTrue(len(old_path) < len(getImagePath()))
         self.assertIn(new_path, getImagePath())
-
+print('b')
 tests = unittest.TestLoader().loadTestsFromTestCase(PathUtilsTestCase)
+print('c')
 out_folder = os.path.join(
     path_utils.get_ws_root_path(),
     "out",
@@ -73,6 +75,7 @@ out_folder = os.path.join(
     "allos",
     "path_utils_tests"
 )
+print('d')
 now = datetime.datetime.now()
 filename = "{}-{}-{}.{}h{}.html".format(
     now.year,

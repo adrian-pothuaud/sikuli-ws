@@ -88,7 +88,8 @@ allos_path = os.path.join(allos_path, <span class="str">"allos"</span>)
     sys.path.append(allos_path)
 <span class="cmt"># import path_utils module</span>
 <span class="kw">import</span> path_utils
-
+<span class="kw">print</span>(<span class="str">'a'</span>)
+<span class="kw">print</span>(path_utils)
 <span class="kw">class</span> PathUtilsTestCase(unittest.TestCase):
     @classmethod
     <span class="kw">def</span> setUpClass(self):
@@ -136,8 +137,9 @@ allos_path = os.path.join(allos_path, <span class="str">"allos"</span>)
         self.assertNotEqual(len(old_path), len(getImagePath()))
         self.assertTrue(len(old_path) &lt; len(getImagePath()))
         self.assertIn(new_path, getImagePath())
-
+<span class="kw">print</span>(<span class="str">'b'</span>)
 tests = unittest.TestLoader().loadTestsFromTestCase(PathUtilsTestCase)
+<span class="kw">print</span>(<span class="str">'c'</span>)
 out_folder = os.path.join(
     path_utils.get_ws_root_path(),
     <span class="str">"out"</span>,
@@ -145,6 +147,7 @@ out_folder = os.path.join(
     <span class="str">"allos"</span>,
     <span class="str">"path_utils_tests"</span>
 )
+<span class="kw">print</span>(<span class="str">'d'</span>)
 now = datetime.datetime.now()
 filename = <span class="str">"{}-{}-{}.{}h{}.html"</span>.format(
     now.year,
