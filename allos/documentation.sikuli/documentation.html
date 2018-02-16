@@ -110,37 +110,37 @@ DOC[<span class="str">"ws_root"</span>] = {
     },
     <span class="str">"sikuli modules"</span>: sikuli_modules_in_ws
 }
-
-<span class="kw">for</span> f <span class="kw">in</span> folders_in_ws:
-    folders_in_f = glob.glob(<span class="str">"{}{}*"</span>.format(f, os.sep))
+<span class="str">"""
+for f in folders_in_ws:
+    folders_in_f = glob.glob("{}{}*".format(f, os.sep))
     python_files_in_f = []
     sikuli_modules_in_f = []
     text_files_in_f = []
     html_files_in_f = []
-    <span class="kw">for</span> fo <span class="kw">in</span> f:
-        <span class="kw">if</span> <span class="str">'.'</span> <span class="kw">in</span> fo <span class="kw">and</span> <span class="str">'py'</span> == fo.split(<span class="str">'.'</span>)[-<span class="dig">1</span>]:
+    for fo in f:
+        if '.' in fo and 'py' == fo.split('.')[-1]:
             folders_in_f.remove(fo)
             python_files_in_f.append(fo)
-        <span class="kw">if</span> <span class="str">'.'</span> <span class="kw">in</span> fo <span class="kw">and</span><span class="str">'sikuli'</span> == fo.split(<span class="str">'.'</span>)[-<span class="dig">1</span>]:
+        if '.' in fo and'sikuli' == fo.split('.')[-1]:
             folders_in_f.remove(fo)
             sikuli_modules_in_f.append(fo)
-        <span class="kw">if</span> <span class="str">'.'</span> <span class="kw">in</span> fo <span class="kw">and</span> <span class="str">'txt'</span> == fo.split(<span class="str">'.'</span>)[-<span class="dig">1</span>]:
+        if '.' in fo and 'txt' == fo.split('.')[-1]:
             folders_in_f.remove(fo)
             text_files_in_f.append(fo)
-        <span class="kw">if</span> <span class="str">'.'</span> <span class="kw">in</span> fo <span class="kw">and</span> <span class="str">'html'</span> == fo.split(<span class="str">'.'</span>)[-<span class="dig">1</span>]:
+        if '.' in fo and 'html' == fo.split('.')[-1]:
             folders_in_f.remove(fo)
             html_files_in_f.append(fo)
 
     DOC[f] = {
-        <span class="str">"folders"</span>: folders_in_f,
-        <span class="str">"files"</span>: {
-            <span class="str">"python"</span>: python_files_in_f,
-            <span class="str">"text"</span>: text_files_in_f,
-            <span class="str">"html"</span>: html_files_in_f
+        "folders": folders_in_f,
+        "files": {
+            "python": python_files_in_f,
+            "text": text_files_in_f,
+            "html": html_files_in_f
         },
-        <span class="str">"sikuli modules"</span>: sikuli_modules_in_f
+        "sikuli modules": sikuli_modules_in_f
     }
-
+"""</span>
 <span class="kw">with</span> open(os.path.join(getBundlePath(), <span class="str">"out.json"</span>), <span class="str">"w"</span>) <span class="kw">as</span> f:
     f.write(json.dumps(DOC, indent=<span class="dig">4</span>, sort_keys=True))
 </pre>

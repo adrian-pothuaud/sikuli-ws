@@ -4,7 +4,8 @@
 
 from sikuli import *
 
-import Browser
+from Browser import Browser
+from Application import Application
 
 class Chrome(Browser):
     '''Google Chrome'''
@@ -18,3 +19,8 @@ class Chrome(Browser):
         Application.__init__(self, "google chrome", chrome_path)
     def bookmark(self):
         click("bookmark_this_page.PNG")
+
+if __name__ == '__main__':
+
+    c = Chrome()
+    c.open()

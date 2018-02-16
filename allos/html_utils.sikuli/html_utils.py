@@ -4,30 +4,24 @@
 
 from sikuli import *
 
-def hello_world(output_file):
-    '''Create an Hello World html file'''
-    content = """
-        <!doctype html>\n
-        \n
-        <html lang="en">\n
-        <head>\n
-        \t<meta charset="utf-8">\n
-        \n
-        \t<title>The HTML5 Herald</title>\n
-        \t<meta name="description" content="The HTML5 Herald">\n
-        \t<meta name="author" content="SitePoint">\n
-        \n
-        \t<link rel="stylesheet" href="css/styles.css?v=1.0">\n
-        \n
-        \t<!--[if lt IE 9]>\n
-        \t\t<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>\n
-        \t<![endif]-->\n
-        </head>\n
-        \n
-        <body>\n
-        \t<!--end of body-->\n
-        </body>\n
-        </html>
-    """
-    with open(output_file, 'w') as f:
-        f.write(content)
+allosPath = os.path.dirname(getBundlePath())
+if not allosPath in sys.path:
+    sys.path.append(allosPath)
+
+if __name__ == '__main__':
+
+    from html import XHTML
+
+    doc = XHTML('html')
+    head = doc.head
+    title = head.title("My title")
+    body = doc.body
+    nav = body.nav
+    l = nav.ul(newlines=False)
+    for i in [{"label":"Home", "link":"/"}, {"label":"About", "link":"/about"}]:
+        l.li.a(i["label"], href=i["link"])
+    section1 = body.section
+    p1 = section1.p("Hello World!")
+    foot = body.footer
+    foot.p("eno.qa.cfg.chg")
+    print(doc)

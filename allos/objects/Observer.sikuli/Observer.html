@@ -1,0 +1,122 @@
+
+<html>
+   <head>
+      <style type="text/css">
+         .sikuli-code {
+            font-size: 20px;
+            font-family: "Osaka-mono", Monospace;
+            line-height: 1.5em;
+            display:table-cell;
+            white-space: pre-wrap;       /* css-3 */
+            white-space: -moz-pre-wrap !important;  /* Mozilla, since 1999 */
+            white-space: -pre-wrap;      /* Opera 4-6 */
+            white-space: -o-pre-wrap;    /* Opera 7 */
+            word-wrap: break-word;       /* Internet Explorer 5.5+ */
+            width: 99%;   /* remove horizontal scroll-bar when viewing in IE7 */
+         }
+         .sikuli-code img {
+            vertical-align: middle;
+            margin: 2px;
+            border: 1px solid #ccc;
+            padding: 2px;
+            -moz-border-radius: 5px;
+            -webkit-border-radius: 5px;
+            -moz-box-shadow: 1px 1px 1px gray;
+            -webkit-box-shadow: 1px 1px 2px gray;
+         }
+         .kw {
+            color: blue;
+         }
+         .skw {
+            color: rgb(63, 127, 127);
+         }
+
+         .str {
+            color: rgb(128, 0, 0);
+         }
+
+         .dig {
+            color: rgb(128, 64, 0);
+         }
+
+         .cmt {
+            color: rgb(200, 0, 200);
+         }
+
+         h2 {
+            display: inline;
+            font-weight: normal;
+         }
+
+         .info {
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+            display: none;
+         }
+
+         a {
+            color: #9D2900;
+         }
+
+         body {
+            font-family: "Trebuchet MS", Arial, Sans-Serif;
+         }
+
+      </style>
+   </head>
+<body>
+<div class="info">
+<h2>Observer.sikuli</h2> <a href="Observer.zip">(Download this script)</a>
+</div>
+<pre class="sikuli-code">
+<span class="cmt"># -*- coding:utf-8 -*-</span>
+
+<span class="kw">from</span> sikuli <span class="kw">import</span> *
+
+<span class="kw">from</span> threading <span class="kw">import</span> Thread
+<span class="kw">import</span> time
+<span class="kw">import</span> shutil
+
+<span class="kw">class</span> Observeur(Thread):
+    <span class="str">"""Thread charge d observer des changements dans une region donnee"""</span>
+
+    <span class="kw">def</span> __init__(self, reg=Screen(<span class="dig">0</span>), timeout=<span class="dig">10</span>, output=None):
+        Thread.__init__(self)
+        self.reg = reg
+        self.timeout = timeout
+        self.output = output
+        self.currentRegImg = <span class="skw">capture</span>(self.reg)
+
+    <span class="kw">def</span> __str__(self):
+        <span class="kw">return</span> <span class="str">"Observeur (instance) {} sur la region {}"</span>.format(self.name, self.reg)
+
+    <span class="kw">def</span> run(self):
+        <span class="str">"""code a execuer pendant l execution du thread"""</span>
+        <span class="kw">for</span> i <span class="kw">in</span> range(self.timeout):
+            <span class="kw">print</span>(<span class="str">"{} attend un changement ... il est vieux de {} secondes\n"</span>.format(self, i+<span class="dig">1</span>))
+            <span class="kw">if</span> self.reg.exists(self.currentRegImg, <span class="dig">1</span>):
+                <span class="kw">print</span>(<span class="str">" pas de changement detecte"</span>)
+            <span class="kw">else</span>:
+                <span class="kw">print</span>(<span class="str">"Changement dans la region {}"</span>.format(self.reg))
+                self.currentRegImg = <span class="skw">capture</span>(self.reg)
+        <span class="kw">print</span>(<span class="str">"{} est mort"</span>.format(self))
+
+<span class="kw">if</span> __name__ == <span class="str">'__main__'</span>:
+
+    o1 = Observeur(Screen(<span class="dig">0</span>), <span class="dig">3</span>, <img src="test1.png" />)
+    o2 = Observeur(Screen(<span class="dig">0</span>), <span class="dig">3</span>, <img src="test2.png" />)
+    o3 = Observeur(Screen(<span class="dig">0</span>), <span class="dig">3</span>, <img src="test3.png" />)
+
+    o1.start()
+    <span class="skw">wait</span>(<span class="dig">2</span>)
+    o2.start()
+    <span class="skw">wait</span>(<span class="dig">1</span>)
+    o3.start()
+
+    o1.join()
+    o2.join()
+    o3.join()
+</pre>
+</body>
+</html>

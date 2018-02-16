@@ -5,7 +5,7 @@ https://github.com/RaiMan/SikuliX-2014/blob/develop/API/src/main/java/org/sikuli
 App class needs application path to be executed so final functions will be declared in os specific libraries
 in this module we define os independent reusable behaviors'''
 
-from sikuli import getBundlePath, Key, Env, App
+from sikuli import getBundlePath, Key, Env, App, switchApp
 
 import os, glob
 
@@ -34,8 +34,7 @@ def launch_app(app_name, wait_img=False, timeout=10):
     app = App(os_applications.APPS[app_name]["path"])
     if not App(app_name).isRunning():
         app.open()
-    else:
-        app.focus()
+    switchApp(app_name)
     if wait_img:
         print("Waiting for app to be openned...")
         img_lib = os.path.join(

@@ -38,7 +38,7 @@ DOC["ws_root"] = {
     },
     "sikuli modules": sikuli_modules_in_ws
 }
-
+"""
 for f in folders_in_ws:
     folders_in_f = glob.glob("{}{}*".format(f, os.sep))
     python_files_in_f = []
@@ -68,6 +68,6 @@ for f in folders_in_ws:
         },
         "sikuli modules": sikuli_modules_in_f
     }
-
+"""
 with open(os.path.join(getBundlePath(), "out.json"), "w") as f:
     f.write(json.dumps(DOC, indent=4, sort_keys=True))

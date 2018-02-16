@@ -1,110 +1,4 @@
 {
-    "C:\\Users\\apd2\\Documents\\GitHub\\sikuli-ws\\allos": {
-        "files": {
-            "html": [], 
-            "python": [], 
-            "text": []
-        }, 
-        "folders": [
-            "C:\\Users\\apd2\\Documents\\GitHub\\sikuli-ws\\allos\\applications.sikuli", 
-            "C:\\Users\\apd2\\Documents\\GitHub\\sikuli-ws\\allos\\desc.txt", 
-            "C:\\Users\\apd2\\Documents\\GitHub\\sikuli-ws\\allos\\documentation.sikuli", 
-            "C:\\Users\\apd2\\Documents\\GitHub\\sikuli-ws\\allos\\generate.sikuli", 
-            "C:\\Users\\apd2\\Documents\\GitHub\\sikuli-ws\\allos\\html_utils.sikuli", 
-            "C:\\Users\\apd2\\Documents\\GitHub\\sikuli-ws\\allos\\image_utils.sikuli", 
-            "C:\\Users\\apd2\\Documents\\GitHub\\sikuli-ws\\allos\\path_utils.sikuli", 
-            "C:\\Users\\apd2\\Documents\\GitHub\\sikuli-ws\\allos\\screenshot.sikuli"
-        ], 
-        "sikuli modules": []
-    }, 
-    "C:\\Users\\apd2\\Documents\\GitHub\\sikuli-ws\\imgs": {
-        "files": {
-            "html": [], 
-            "python": [], 
-            "text": []
-        }, 
-        "folders": [
-            "C:\\Users\\apd2\\Documents\\GitHub\\sikuli-ws\\imgs\\desc.txt", 
-            "C:\\Users\\apd2\\Documents\\GitHub\\sikuli-ws\\imgs\\linux", 
-            "C:\\Users\\apd2\\Documents\\GitHub\\sikuli-ws\\imgs\\osx", 
-            "C:\\Users\\apd2\\Documents\\GitHub\\sikuli-ws\\imgs\\win"
-        ], 
-        "sikuli modules": []
-    }, 
-    "C:\\Users\\apd2\\Documents\\GitHub\\sikuli-ws\\linux": {
-        "files": {
-            "html": [], 
-            "python": [], 
-            "text": []
-        }, 
-        "folders": [
-            "C:\\Users\\apd2\\Documents\\GitHub\\sikuli-ws\\linux\\desc.txt", 
-            "C:\\Users\\apd2\\Documents\\GitHub\\sikuli-ws\\linux\\os_applications.sikuli"
-        ], 
-        "sikuli modules": []
-    }, 
-    "C:\\Users\\apd2\\Documents\\GitHub\\sikuli-ws\\osx": {
-        "files": {
-            "html": [], 
-            "python": [], 
-            "text": []
-        }, 
-        "folders": [
-            "C:\\Users\\apd2\\Documents\\GitHub\\sikuli-ws\\osx\\desc.txt", 
-            "C:\\Users\\apd2\\Documents\\GitHub\\sikuli-ws\\osx\\os_applications.sikuli"
-        ], 
-        "sikuli modules": []
-    }, 
-    "C:\\Users\\apd2\\Documents\\GitHub\\sikuli-ws\\specs": {
-        "files": {
-            "html": [], 
-            "python": [], 
-            "text": []
-        }, 
-        "folders": [
-            "C:\\Users\\apd2\\Documents\\GitHub\\sikuli-ws\\specs\\documentation.sikuli", 
-            "C:\\Users\\apd2\\Documents\\GitHub\\sikuli-ws\\specs\\launch_applications.sikuli", 
-            "C:\\Users\\apd2\\Documents\\GitHub\\sikuli-ws\\specs\\paths.sikuli", 
-            "C:\\Users\\apd2\\Documents\\GitHub\\sikuli-ws\\specs\\scripts_scaffolding.sikuli", 
-            "C:\\Users\\apd2\\Documents\\GitHub\\sikuli-ws\\specs\\sikuli_objects_and_returns.sikuli"
-        ], 
-        "sikuli modules": []
-    }, 
-    "C:\\Users\\apd2\\Documents\\GitHub\\sikuli-ws\\tests": {
-        "files": {
-            "html": [], 
-            "python": [], 
-            "text": []
-        }, 
-        "folders": [
-            "C:\\Users\\apd2\\Documents\\GitHub\\sikuli-ws\\tests\\allos", 
-            "C:\\Users\\apd2\\Documents\\GitHub\\sikuli-ws\\tests\\desc.txt"
-        ], 
-        "sikuli modules": []
-    }, 
-    "C:\\Users\\apd2\\Documents\\GitHub\\sikuli-ws\\tutos": {
-        "files": {
-            "html": [], 
-            "python": [], 
-            "text": []
-        }, 
-        "folders": [
-            "C:\\Users\\apd2\\Documents\\GitHub\\sikuli-ws\\tutos\\desc.txt"
-        ], 
-        "sikuli modules": []
-    }, 
-    "C:\\Users\\apd2\\Documents\\GitHub\\sikuli-ws\\win": {
-        "files": {
-            "html": [], 
-            "python": [], 
-            "text": []
-        }, 
-        "folders": [
-            "C:\\Users\\apd2\\Documents\\GitHub\\sikuli-ws\\win\\desc.txt", 
-            "C:\\Users\\apd2\\Documents\\GitHub\\sikuli-ws\\win\\os_applications.sikuli"
-        ], 
-        "sikuli modules": []
-    }, 
     "ws_root": {
         "files": {
             "html": [], 
@@ -120,6 +14,7 @@
             "C:\\Users\\apd2\\Documents\\GitHub\\sikuli-ws\\imgs", 
             "C:\\Users\\apd2\\Documents\\GitHub\\sikuli-ws\\linux", 
             "C:\\Users\\apd2\\Documents\\GitHub\\sikuli-ws\\osx", 
+            "C:\\Users\\apd2\\Documents\\GitHub\\sikuli-ws\\out", 
             "C:\\Users\\apd2\\Documents\\GitHub\\sikuli-ws\\specs", 
             "C:\\Users\\apd2\\Documents\\GitHub\\sikuli-ws\\tests", 
             "C:\\Users\\apd2\\Documents\\GitHub\\sikuli-ws\\tutos", 

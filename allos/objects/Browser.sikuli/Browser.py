@@ -2,9 +2,11 @@
 
 '''Control Web Browsers within objects'''
 
+from sikuli import *
+
 import Application
 
-class Browser(Application):
+class Browser(Application.Application):
     '''Web browser object'''
     def __init__(self, app_name, exec_path):
         '''Constructor, parameters name and path'''
@@ -15,6 +17,4 @@ class Browser(Application):
         if target_url:
             wait(1)
             paste(target_url)
-            wait(1)
             type(Key.ENTER)
-            wait(1)
