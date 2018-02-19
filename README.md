@@ -13,6 +13,11 @@ How to use Sikuli ?
 
 :zzz::zzz::zzz: ... coming soon ... :zzz::zzz::zzz:
 
+How to better use Sikuli ?
+-------------------
+
+:zzz::zzz::zzz: ... coming soon ... :zzz::zzz::zzz:
+
 Workspace structure
 -------------------
 
@@ -33,8 +38,18 @@ e.g: test reports.
 
 #### [specs](https://github.com/adrianpothuaud/sikuli-ws/tree/master/specs)
 
+On-the-go testing and demonstrations.
+
 #### [src](https://github.com/adrianpothuaud/sikuli-ws/tree/master/src)
+
+Improved and custom sikuli features for image recognition and GUI interactions.
 
 #### [tests](https://github.com/adrianpothuaud/sikuli-ws/tree/master/tests)
 
+- Unit tests for every sources.
+- Test scenarios for applications(GUI testing).
+
 #### [tutos](https://github.com/adrianpothuaud/sikuli-ws/tree/master/tutos)
+
+A tutorials series for Sikuli and how to create a workspace similar to this one.
+On coming: tutorial to test the GUI of an application the proper way and validate or not distribution.
