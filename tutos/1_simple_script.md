@@ -39,54 +39,64 @@ How to script
   5. Document your script and write basic common elements
 
   '''python
-  # -*- coding:utf-8 -*-
 
-  """
+  	# -*- coding:utf-8 -*-
 
-      tutos/1_simple_script.sikuli/1_simple_script.py
+    """
 
-      Sikuli first script
-      ===================
+        tutos/1_simple_script.sikuli/1_simple_script.py
 
-      see tutos/1_simple_script.md
+        Sikuli first script
+        ===================
 
-      Scenario
-      --------
+        see tutos/1_simple_script.md
 
-      Open webbrowser
-      Go to http://www.google.com
-      search for 'Sikuli'
-      wait first result
+        Scenario
+        --------
 
-      Status
-      ------
+        Open webbrowser
+        Go to http://www.google.com
+        search for 'Sikuli'
+        wait first result
 
-      OK
-      date: 2/19/2018
+        Status
+        ------
 
-      .. sectionauthor:: Adrian Pothuaud <adrianpothuaud2@gmail.com>
+        OK
+        date: 2/19/2018
 
-  """
+        .. sectionauthor:: Adrian Pothuaud <adrianpothuaud2@gmail.com>
 
-  from sikuli import *            # sikuli features
+    """
+
+    from sikuli import *            # sikuli features
   '''
+
 3. Write the script
+
   '''python
-  import webbrowser               # python web browser automation
+
+    import webbrowser               # python web browser automation
 
 
-  # open google
-  webbrowser.open("http://www.google.com")
-  wait("google.png")
-  # type 'Sikuli'
-  click("google.png")
-  paste("Sikuli")
-  wait(0.5)
-  # search
-  Region(200, 200, 200, 200).getCenter().click()
-  wait(1)
-  click("search.png")
-  # wait result
-  wait("sikuli-script-home.png")
+    # open google
+    webbrowser.open("http://www.google.com")
+    wait("google.png")
+    # type 'Sikuli'
+    click("google.png")
+    paste("Sikuli")
+    wait(0.5)
+    # search
+    Region(200, 200, 200, 200).getCenter().click()
+    wait(1)
+    click("search.png")
+    # wait result
+    wait("sikuli-script-home.png")
   '''
-4. in a shell write java -jar path_to_sikulix.jar -r path_to_script.sikuli
+4. in a shell write
+
+'''shell
+
+	java -jar path_to_sikulix.jar -r path_to_script.sikuli
+
+'''
