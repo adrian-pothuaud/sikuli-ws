@@ -2,7 +2,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title>Unit Test Report</title>
+    <title>Applications</title>
     <meta name="generator" content="HTMLTestRunner 0.8.2"/>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     
@@ -188,12 +188,12 @@ function showOutput(id, name) {
 --></script>
 
 <div class='heading'>
-<h1>Unit Test Report</h1>
-<p class='attribute'><strong>Start Time:</strong> 2018-02-16 00:55:23</p>
-<p class='attribute'><strong>Duration:</strong> 0:00:00.017000</p>
+<h1>Applications</h1>
+<p class='attribute'><strong>Start Time:</strong> 2018-02-19 13:17:00</p>
+<p class='attribute'><strong>Duration:</strong> 0:00:01.918000</p>
 <p class='attribute'><strong>Status:</strong> Error 2</p>
 
-<p class='description'></p>
+<p class='description'>Unit testing src/applications. Environment: WINDOWS.</p>
 </div>
 
 
@@ -245,19 +245,22 @@ function showOutput(id, name) {
         </div>
         <pre>
         
-ft1.1: a
-a
-a
-
-Trying to add /Users/adrian/Documents/github/sikuli-ws/osx to execution path
-PATH ADDED !
-
+ft1.1: Trying to launch application with parameters:
+app_name: google chrome, app_path: None, wait_img: 1, timeout: 10
+Finding parent level 2 of path C:\Users\apd2\Documents\GitHub\sikuli-ws\tests\applications_tests.sikuli
+img_lib: C:\Users\apd2\Documents\GitHub\sikuli-ws\imgs\google_chrome
+maximize_shortcut: (u'\ue000', u'\ue042')
+App google chrome currently not running.
+App google chrome should now be openned.
+Waiting for app images to ensure it is openned...
+All images to wait:
+App is openned !
 Traceback (most recent call last):
-  File "/Users/adrian/Documents/github/sikuli-ws/tests/allos/applications_tests.sikuli/applications_tests.py", line 24, in testLaunchChromeAndWait
+  File "C:\Users\apd2\Documents\GitHub\sikuli-ws\tests\applications_tests.sikuli\applications_tests.py", line 20, in testLaunchChromeAndWait
     applications.launch_app("google chrome", wait_img=True, timeout=10)
-  File "/Users/adrian/Documents/github/sikuli-ws/allos/applications.sikuli/applications.py", line 34, in launch_app
-    app = App(os_applications.APPS[app_name]["path"])
-AttributeError: 'module' object has no attribute 'APPS'
+  File "C:\Users\apd2\Documents\GitHub\sikuli-ws\src\applications.sikuli\applications.py", line 143, in launch_app
+    type(maximize_shortcut)
+TypeError: type(): 1st arg can't be coerced to String
 
 
         </pre>
@@ -282,19 +285,19 @@ AttributeError: 'module' object has no attribute 'APPS'
         </div>
         <pre>
         
-ft1.2: a
-a
-a
-
-Trying to add /Users/adrian/Documents/github/sikuli-ws/osx to execution path
-ALREADY THERE ! nothing done
-
+ft1.2: Trying to launch application with parameters:
+app_name: google chrome, app_path: None, wait_img: 0, timeout: 10
+Finding parent level 2 of path C:\Users\apd2\Documents\GitHub\sikuli-ws\tests\applications_tests.sikuli
+img_lib: C:\Users\apd2\Documents\GitHub\sikuli-ws\imgs\google_chrome
+maximize_shortcut: (u'\ue000', u'\ue042')
+App google chrome currently not running.
+App google chrome should now be openned.
 Traceback (most recent call last):
-  File "/Users/adrian/Documents/github/sikuli-ws/tests/allos/applications_tests.sikuli/applications_tests.py", line 22, in testLaunchChromeWithoutWaiting
+  File "C:\Users\apd2\Documents\GitHub\sikuli-ws\tests\applications_tests.sikuli\applications_tests.py", line 17, in testLaunchChromeWithoutWaiting
     applications.launch_app("google chrome", wait_img=False, timeout=10)
-  File "/Users/adrian/Documents/github/sikuli-ws/allos/applications.sikuli/applications.py", line 34, in launch_app
-    app = App(os_applications.APPS[app_name]["path"])
-AttributeError: 'module' object has no attribute 'APPS'
+  File "C:\Users\apd2\Documents\GitHub\sikuli-ws\src\applications.sikuli\applications.py", line 143, in launch_app
+    type(maximize_shortcut)
+TypeError: type(): 1st arg can't be coerced to String
 
 
         </pre>

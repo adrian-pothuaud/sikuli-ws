@@ -2,7 +2,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title>Unit Test Report</title>
+    <title>Generate</title>
     <meta name="generator" content="HTMLTestRunner 0.8.2"/>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     
@@ -188,12 +188,12 @@ function showOutput(id, name) {
 --></script>
 
 <div class='heading'>
-<h1>Unit Test Report</h1>
-<p class='attribute'><strong>Start Time:</strong> 2018-02-16 00:57:25</p>
-<p class='attribute'><strong>Duration:</strong> 0:00:00.012000</p>
-<p class='attribute'><strong>Status:</strong> Error 2</p>
+<h1>Generate</h1>
+<p class='attribute'><strong>Start Time:</strong> 2018-02-19 13:06:44</p>
+<p class='attribute'><strong>Duration:</strong> 0:00:00.047000</p>
+<p class='attribute'><strong>Status:</strong> Pass 2</p>
 
-<p class='description'></p>
+<p class='description'>Unit testing src/generate. Environment: WINDOWS.</p>
 </div>
 
 
@@ -221,89 +221,31 @@ function showOutput(id, name) {
     <td>View</td>
 </tr>
 
-<tr class='errorClass'>
-    <td>ApplicationsTestCase</td>
+<tr class='passClass'>
+    <td>GenerateTestCase</td>
+    <td>2</td>
     <td>2</td>
     <td>0</td>
     <td>0</td>
-    <td>2</td>
     <td><a href="javascript:showClassDetail('c1',2)">Detail</a></td>
 </tr>
 
-<tr id='ft1.1' class='none'>
-    <td class='errorCase'><div class='testcase'>testLaunchChromeAndWait</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.1')" >
-        error</a>
-
-    <div id='div_ft1.1' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.1').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-ft1.1: 
-Trying to add /Users/adrian/Documents/github/sikuli-ws/osx to execution path
-ALREADY THERE ! nothing done
-
-Traceback (most recent call last):
-  File "/Users/adrian/Documents/github/sikuli-ws/tests/allos/applications_tests.sikuli/applications_tests.py", line 24, in testLaunchChromeAndWait
-    applications.launch_app("google chrome", wait_img=True, timeout=10)
-  File "/Users/adrian/Documents/github/sikuli-ws/allos/applications.sikuli/applications.py", line 34, in launch_app
-    app = App(os_applications.APPS[app_name]["path"])
-AttributeError: 'module' object has no attribute 'APPS'
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
+<tr id='pt1.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testGenerateContent</div></td>
+    <td colspan='5' align='center'>pass</td>
 </tr>
 
-<tr id='ft1.2' class='none'>
-    <td class='errorCase'><div class='testcase'>testLaunchChromeWithoutWaiting</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.2')" >
-        error</a>
-
-    <div id='div_ft1.2' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.2').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-ft1.2: 
-Trying to add /Users/adrian/Documents/github/sikuli-ws/osx to execution path
-ALREADY THERE ! nothing done
-
-Traceback (most recent call last):
-  File "/Users/adrian/Documents/github/sikuli-ws/tests/allos/applications_tests.sikuli/applications_tests.py", line 22, in testLaunchChromeWithoutWaiting
-    applications.launch_app("google chrome", wait_img=False, timeout=10)
-  File "/Users/adrian/Documents/github/sikuli-ws/allos/applications.sikuli/applications.py", line 34, in launch_app
-    app = App(os_applications.APPS[app_name]["path"])
-AttributeError: 'module' object has no attribute 'APPS'
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
+<tr id='pt1.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testGenerateFiles</div></td>
+    <td colspan='5' align='center'>pass</td>
 </tr>
 
 <tr id='total_row'>
     <td>Total</td>
     <td>2</td>
-    <td>0</td>
-    <td>0</td>
     <td>2</td>
+    <td>0</td>
+    <td>0</td>
     <td>&nbsp;</td>
 </tr>
 </table>

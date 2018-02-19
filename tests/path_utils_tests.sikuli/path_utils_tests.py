@@ -1,35 +1,20 @@
 # -*- coding:utf-8 -*-
 
-'''Unit tests for allos/pah_utils module'''
+"""
+ok 2/19/2018 - Windows
+"""
 
-from sikuli import *
-
-import os, sys, unittest, HTMLTestRunner
-
-# find path of [ROOT]/allos folder
-allos_path = this_path = getBundlePath()
-for i in range(3):
-    allos_path = os.path.dirname(allos_path)
-allos_path = os.path.join(allos_path, "allos")
-# add it to path
-if not allos_path in sys.path:
-    sys.path.append(allos_path)
-# import path_utils module
+import unittest
+import datetime
+import HTMLTestRunner
+import testscontext
 import path_utils
-print('a')
-print(path_utils)
+
+
 class PathUtilsTestCase(unittest.TestCase):
-    @classmethod
-    def setUpClass(self):
-        if Env.isWindows():
-            self.cur_env = 'win'
-        elif Env.isMac() or Env.isLinux():
-            self.cur_env = 'uni'
-        else:
-            raise Exception('Current OS is not supported')
 
     def testParentDirname(self):
-        if self.cur_env == 'win':
+        if Env.isWindows():
             resp = path_utils.get_parent_dirname(os.path.join(r"C:/Users"), 1)
             self.assertEqual(resp, "C:/")
         else:
@@ -40,7 +25,7 @@ class PathUtilsTestCase(unittest.TestCase):
         old_path = []
         for p in sys.path:
             old_path.append(p)
-        if self.cur_env == 'win':
+        if Env.isWindows():
             new_path = r"C:"
             path_utils.add_execution_path(new_path)
         else:
@@ -55,7 +40,7 @@ class PathUtilsTestCase(unittest.TestCase):
         old_path = []
         for p in getImagePath():
             old_path.append(p)
-        if self.cur_env == 'win':
+        if Env.isWindows():
             new_path = r"C:\Users"
             path_utils.add_image_path(new_path)
         else:
@@ -65,27 +50,16 @@ class PathUtilsTestCase(unittest.TestCase):
         self.assertNotEqual(len(old_path), len(getImagePath()))
         self.assertTrue(len(old_path) < len(getImagePath()))
         self.assertIn(new_path, getImagePath())
-print('b')
-tests = unittest.TestLoader().loadTestsFromTestCase(PathUtilsTestCase)
-print('c')
-out_folder = os.path.join(
-    path_utils.get_ws_root_path(),
-    "out",
-    "test_reports",
-    "allos",
-    "path_utils_tests"
-)
-print('d')
-now = datetime.datetime.now()
-filename = "{}-{}-{}.{}h{}.html".format(
-    now.year,
-    now.month,
-    now.day,
-    now.hour,
-    now.minute
-)
-with open(os.path.join(out_folder, filename), 'w') as rf:
-    runner = HTMLTestRunner.HTMLTestRunner(
-        stream = rf
+
+if __name__ == '__main__':
+
+    tests = unittest.TestLoader().loadTestsFromTestCase(PathUtilsTestCase)
+    now = datetime.datetime.now()
+    filename = "{}-{}-{}.{}h{}.html".format(
+        now.year, now.month, now.day, now.hour, now.minute
     )
-    runner.run(tests)
+    with open(os.path.join(testscontext.outpath, 'test_reports', 'path_utils_tests', filename), 'w') as rf:
+        runner = HTMLTestRunner.HTMLTestRunner(
+            stream = rf, description="Unit testing src/path_utils. Environment: {}.".format(Env.getOS()), title="Path utils"
+        )
+        runner.run(tests)

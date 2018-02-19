@@ -2,7 +2,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title>Unit Test Report</title>
+    <title>Path utils</title>
     <meta name="generator" content="HTMLTestRunner 0.8.2"/>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     
@@ -188,12 +188,12 @@ function showOutput(id, name) {
 --></script>
 
 <div class='heading'>
-<h1>Unit Test Report</h1>
-<p class='attribute'><strong>Start Time:</strong> 2018-02-15 16:06:48</p>
-<p class='attribute'><strong>Duration:</strong> 0:00:00.011000</p>
+<h1>Path utils</h1>
+<p class='attribute'><strong>Start Time:</strong> 2018-02-19 12:45:44</p>
+<p class='attribute'><strong>Duration:</strong> 0:00:00</p>
 <p class='attribute'><strong>Status:</strong> Pass 3</p>
 
-<p class='description'></p>
+<p class='description'>Unit testing src/path_utils. Environment: WINDOWS.</p>
 </div>
 
 
@@ -245,10 +245,8 @@ function showOutput(id, name) {
         </div>
         <pre>
         
-pt1.1: 
-Trying to add C: to execution path
-PATH ADDED !
-
+pt1.1: Trying to add C: to execution path
+Path C: added !
 
 
         </pre>
@@ -273,10 +271,8 @@ PATH ADDED !
         </div>
         <pre>
         
-pt1.2: 
-Trying to add C:\Users to image path
-PATH ADDED !
-
+pt1.2: Trying to add C:\Users to image path
+Path C:\Users added !
 
 
         </pre>
@@ -288,7 +284,27 @@ PATH ADDED !
 
 <tr id='pt1.3' class='hiddenRow'>
     <td class='none'><div class='testcase'>testParentDirname</div></td>
-    <td colspan='5' align='center'>pass</td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.3')" >
+        pass</a>
+
+    <div id='div_pt1.3' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.3').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.3: Finding parent level 1 of path C:/Users
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
 </tr>
 
 <tr id='total_row'>

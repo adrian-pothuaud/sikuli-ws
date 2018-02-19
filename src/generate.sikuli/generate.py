@@ -16,6 +16,9 @@
     ------------
     status: OK (02-19-2018)
     test: run specs/scripts_scaffolding.sikuli
+    unit tests:
+        - run tests/generate_tests.sikuli
+        - results: out/test_reports/generate_tests
 
     ..todo:: Sort functions in alphabetical order
     .. sectionauthor:: Adrian Pothuaud <adrianpothuaud2@gmail.com>

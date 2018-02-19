@@ -18,6 +18,9 @@
     ------------
     status: ?
     test: run specs/launch_applications.sikuli
+    unit tests:
+        - run tests/applications_tests.sikuli
+        - results: out/test_reports/applications_tests
 
     .. sectionauthor:: Adrian Pothuaud <adrianpothuaud2@gmail.com>
 
@@ -42,7 +45,7 @@ APPS = {
     },
     "WINDOWS": {
         "google chrome": {
-            "path": ""
+            "path": r"C:\Program Files (x86)\Google\Chrome\Application\chrome.exe"
         }
     },
     "LINUX": {
@@ -137,6 +140,6 @@ def launch_app(app_name=None, app_path=None, wait_img=False, timeout=10):
         image_utils.wait_all(imgs)
         if DEBUG:
             print("App is openned !")
-    type(maximize_shortcut)
+    type(*maximize_shortcut)
     if DEBUG:
         print('App should now be maximized.')
