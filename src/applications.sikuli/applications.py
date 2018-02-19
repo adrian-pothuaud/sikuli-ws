@@ -10,6 +10,8 @@
     Module content
     --------------
 
+    - APPS
+    - SHORTCUTS
     - launch_app
 
     Module state
@@ -27,48 +29,114 @@ import os
 import glob
 
 # src modules
-import specscontext
 import path_utils, image_utils
 
 DEBUG = True
 
 
-def launch_app(app_name, app_path=None, wait_img=False, timeout=10):
-    '''Process to launch an app (os independent)'''
-    app_path = None
-    os_img_lib = None
-    if Env.isWindows():
-        os_path = os.path.join(ws_root, 'win')
-        os_img_lib = 'win'
-        maximize_shortcut = (Key.UP, Key.WIN)
-    elif Env.isMac():
-        os_path = os.path.join(ws_root, 'osx')
-        os_img_lib = 'osx'
-        maximize_shortcut = None
-    elif Env.isLinux():
-        os_path = os.path.join(ws_root, 'linux')
-        os_img_lib = 'linux'
-        maximize_shortcut = None
-    path_utils.add_execution_path(os_path)
-    import os_applications
-    app = App(os_applications.APPS[app_name]["path"])
+APPS = {
+    "MAC": {
+        "google chrome": {
+            "path": ""
+        }
+    },
+    "WINDOWS": {
+        "google chrome": {
+            "path": ""
+        }
+    },
+    "LINUX": {
+        "google chrome": {
+            "path": ""
+        }
+    }
+}
+
+SHORTCUTS = {
+    "MAC": {
+        "maximize": ()
+    },
+    "WINDOWS": {
+        "maximize": (Key.UP, Key.WIN)
+    },
+    "LINUX": {
+        "maximize": ()
+    }
+}
+
+def launch_app(app_name=None, app_path=None, wait_img=False, timeout=10):
+    """
+    Open an application.
+
+    Give:
+    - app_name and ensure APPS[app_name] is defined
+    - if APPS[app_name] is undefined, then give app_path
+    - choose either to wait or not for images in imgs/app_name/start
+    -> wait: set wait_img as True
+    - default timeout is 10
+    This will define a Sikuli App() instance and run it.
+
+    :param app_name: application_name as in APPS
+    :type path: str
+    :param app_path: path to application executable or script
+    :type app_path: str
+    :param wait_img: wait for imgs in imgs/app_name/start or not
+    :type wait_img: boolean
+    :param timeout: timeout for wait for imgs in imgs/app_name/start or not
+    :type timeout: int
+    :return: Nothing
+    :rtype: None
+
+    """
+    if DEBUG:
+        print("Trying to launch application with parameters:")
+        print("app_name: {}, app_path: {}, wait_img: {}, timeout: {}".format(
+            app_name,
+            app_path,
+            wait_img,
+            timeout
+        ))
+    # guess image library
+    img_lib = os.path.join(
+        path_utils.get_parent_dirname(
+            getBundlePath(), 2
+        ),
+        "imgs",
+        app_name.replace(' ', '_')
+    )
+    if DEBUG:
+        print("img_lib: {}".format(img_lib))
+    maximize_shortcut = SHORTCUTS[str(Env.getOS())]["maximize"]
+    if DEBUG:
+        print("maximize_shortcut: {}".format(maximize_shortcut))
+    app = App(APPS[str(Env.getOS())][app_name]["path"])
     if not App(app_name).isRunning():
+        if DEBUG:
+            print("App {} currently not running.".format(app_name))
         app.open()
+        if DEBUG:
+            print("App {} should now be openned.".format(app_name))
     else:
+        if DEBUG:
+            print("App {} currently running, trying to focus ont it...".format(app_name))
         app.focus()
     if wait_img:
-        print("Waiting for app to be openned...")
-        img_lib = os.path.join(
-            path_utils.get_parent_dirname(getBundlePath(), 2),
-            "imgs"
-        )
+        print("Waiting for app images to ensure it is openned...")
         imgs = glob.glob(
-            "{}{}start{}*.png".format(
-                os.path.join(img_lib, os_img_lib, app_name.replace(' ', '_').replace('+', 'p')),
-                os.sep,
-                os.sep
+            os.path.join(
+                img_lib,
+                app_name,
+                "start",
+                "*.png"
             )
         )
+        if DEBUG:
+            print("All images to wait:")
+            for im in imgs:
+                print("\t{},".format(im))
         image_utils.wait_all(imgs)
-        print("App is openned !")
+        if DEBUG:
+            print("App is openned !")
     type(maximize_shortcut)
+    if DEBUG:
+        print('App should now be maximized.')
