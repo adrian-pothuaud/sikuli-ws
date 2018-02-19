@@ -1,10 +1,12 @@
 # -*- coding:utf-8 -*-
 
-'''
+"""
 This module is intended to demonstrate how to manipulate paths for Sikuli
 e.g Manipulate Image Path
 e.g Manipulate Execution Path
-'''
+
+status: OK(02-12-2018)
+"""
 
 # import sikuli features
 from sikuli import *
@@ -28,7 +30,7 @@ print(getImagePath())
 # add a path to sys.path
 # also use path_utils.add_execution_path(new_path) in allos/pathUtils.sikuli
 print("\nAdding a path to execution pathV F")
-new_path = os.path.join(os.path.dirname(os.path.dirname(getBundlePath())), "allos")
+new_path = os.path.join(os.path.dirname(os.path.dirname(getBundlePath())), "src")
 if not new_path in sys.path:
     sys.path.append(new_path)
 # makes changes (add one path)
@@ -48,12 +50,9 @@ path_utils.print_image_path()
 # if [ROOT]/.../allos is in sys.path, we can now add path(s) with ...
 # use path_utils.get_parent_dirname(path, level) to get level x parent dirname
 root_path = path_utils.get_parent_dirname(getBundlePath(), 2)
-new_path1 = os.path.join(root_path, "osx")
-new_path2 = os.path.join(root_path, "win")
-new_path3 = os.path.join(root_path, "linux")
+new_path1 = os.path.join(root_path, "src", "objects")
 path_utils.add_execution_path(new_path1)
 path_utils.print_execution_path()
-path_utils.add_execution_path([new_path2, new_path3])
 # path already exists mistake is handled
 path_utils.add_execution_path(new_path1)
 # incorrect path will raise Error
