@@ -1,15 +1,15 @@
 # -*- coding:utf-8 -*-
 
 """
-    Test Scenario: Leboncoin Login
+    Test Scenario: Leboncoin
     ==============================
 
     What is tested here ?
     ---------------------
 
-    1. As an unregistered user I am unable to login
-    2. As a visitor I am able to create an account
-    3. As a registered user I am able to login
+    1. As a visitor I can create an account
+    2. As a user I can login
+    3. As an unregistered user I can't login
 
     Dependencies
     ------------
@@ -24,7 +24,7 @@
     --------
 
     The results of these tests will be stored in:
-    out/smoketests/sample
+    out/smoketests/leboncoin
 
     .. sectionauthor:: Adrian Pothuaud <adrianpothuaud2@gmail.com>
 
@@ -40,26 +40,47 @@ import testscontext
 import Chrome
 
 
-class SampleTestCase(unittest.TestCase):
+# define test classes here
+# scenario 1
+class ICanCreateAnAccount(unittest.TestCase):
+
+    def testIGoNowhereItIsASample(self):
+        self.assertTrue(1 + 2 == 3)
+
+# scenario 2
+class ICanLoginWithValidUser(unittest.TestCase):
+
+    def testISearchNothingItIsASample(self):
+        self.assertNotIn(4, (1, 2, 3))
+
+# scenario 3
+class ICannotLoginWithInvalidUser(unittest.TestCase):
 
     @classmethod
     def setUpClass(self):
-        self.a = 'a'
-
-    def testSampleFunction(self):
-        self.assertTrue(isinstance(srcsample.sample_function_1('b'), dict))
+        self.user = {
+            "username": "unregistered123456",
+            "email": "unregistered123456@test.com",
+            "password": "unregistered123456"
+        }
+        self.chrome = Chrome()
 
 
 if __name__ == '__main__':
 
-    tests = unittest.TestLoader().loadTestsFromTestCase(SampleTestCase)
+    test_list = unittest.TestSuite()
+
+    for tc in (ICanCreateAnAccount, ICanLoginWithValidUser, ICannotLoginWithInvalidUser):
+        tests = unittest.TestLoader().loadTestsFromTestCase(tc)
+        test_list.addTests(tests)
+
     now = datetime.datetime.now()
     filename = "{}-{}-{}.{}h{}.html".format(
         now.year, now.month, now.day, now.hour, now.minute
     )
-    with open(os.path.join(testscontext.outpath, 'test_reports', 'srcsample_tests', filename), 'w') as rf:
+    with open(os.path.join(testscontext.outpath, 'smoketests', 'leboncoin', filename), 'w') as rf:
         runner = HTMLTestRunner.HTMLTestRunner(
-            stream = rf, description="Unit testing src/srcsample. Environment: {}.".format(Env.getOS()),
-            title="Sample", dirTestScreenshots=os.path.join(testscontext.outpath, 'test_reports', 'srcsample_tests')
+            stream = rf, description="Test Scenario: Leboncoin login. Environment: {}.".format(Env.getOS()),
+            title="Leboncoin", dirTestScreenshots=os.path.join(testscontext.outpath, 'smoketests', 'leboncoin', 'screenshots')
         )
-        runner.run(tests)
+        runner.run(test_list)

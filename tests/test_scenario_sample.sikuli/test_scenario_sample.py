@@ -36,14 +36,16 @@ import testscontext
 
 # dependencies
 # (those we should verify in case of failures)
-import Chrome
 
 
+# define test classes here
+# scenario 1
 class ICanGoToMySampleApp(unittest.TestCase):
 
     def testIGoNowhereItIsASample(self):
         self.assertTrue(1 + 2 == 3)
 
+# scenario 2
 class ICanSearchAnything(unittest.TestCase):
 
     def testISearchNothingItIsASample(self):
@@ -52,11 +54,11 @@ class ICanSearchAnything(unittest.TestCase):
 
 if __name__ == '__main__':
 
-    test_list = []
+    test_list = unittest.TestSuite()
 
     for tc in (ICanGoToMySampleApp, ICanSearchAnything):
         tests = unittest.TestLoader().loadTestsFromTestCase(tc)
-        test_list.append(tests)
+        test_list.addTests(tests)
 
     now = datetime.datetime.now()
     filename = "{}-{}-{}.{}h{}.html".format(
@@ -67,4 +69,4 @@ if __name__ == '__main__':
             stream = rf, description="Test Scenario: Sample. Environment: {}.".format(Env.getOS()),
             title="Sample", dirTestScreenshots=os.path.join(testscontext.outpath, 'smoketests', 'sample', 'screenshots')
         )
-        runner.run(tests)
+        runner.run(test_list)
