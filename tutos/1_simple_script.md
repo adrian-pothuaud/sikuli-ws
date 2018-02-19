@@ -35,9 +35,9 @@ How to script
     4. use any other tool at your convenience
 3. Ensure you have
 
-![google.png](1_simple_script.sikuli/google.png)
-![search.png](1_simple_script.sikuli/search.png)
-![sikuli-script-home.png](1_simple_script.sikuli/sikuli-script-home.png)
+- google.png ![google.png](1_simple_script.sikuli/google.png)
+- search.png ![search.png](1_simple_script.sikuli/search.png)
+- sikuli-script-home.png ![sikuli-script-home.png](1_simple_script.sikuli/sikuli-script-home.png)
 
 ###### Prepare the script
 1. Create 1_simple_script.sikuli folder in your workspace
