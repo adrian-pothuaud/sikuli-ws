@@ -20,7 +20,7 @@
         - run tests/generate_tests.sikuli
         - results: out/test_reports/generate_tests
 
-    ..todo:: Sort functions in alphabetical order
+    .. todo:: Sort functions in alphabetical order
     .. sectionauthor:: Adrian Pothuaud <adrianpothuaud2@gmail.com>
 
 """

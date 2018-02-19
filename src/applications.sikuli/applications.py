@@ -16,7 +16,7 @@
 
     Module state
     ------------
-    status: ?
+    status: ok (2/19/2018)
     test: run specs/launch_applications.sikuli
     unit tests:
         - run tests/applications_tests.sikuli
