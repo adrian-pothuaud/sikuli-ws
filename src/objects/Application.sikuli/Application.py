@@ -4,6 +4,8 @@
 
 """
 
+from sikuli import *
+
 class Application:
     """
 
