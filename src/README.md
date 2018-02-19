@@ -15,33 +15,74 @@ Write new sources
     # -*- coding:utf-8 -*-
 
     """
-    description: ...
-    status: ...
-    .. todo:: ...
-    .. sectionauthor:: ...
+
+        The '''srcsample''' module
+        ===========================
+
+        Use it as a template for new sources.
+
+        Module content
+        --------------
+
+        - SAMPLEDICTIONNARY1
+        - sample_function_1
+
+        Module state
+        ------------
+        status: ? (date)
+        test: run specs/specsample.sikuli
+        unit tests:
+            - run tests/srcsample_tests.sikuli
+            - results: out/test_reports/srcsample_tests
+
+        .. sectionauthor:: Adrian Pothuaud <adrianpothuaud2@gmail.com>
+
     """
 
-    from sikuli import *		    # import sikuli features
+    from sikuli import *
 
-    import specscontext			 # context -> add additional sources in path
+    # import python modules here
+    import datetime
 
-    import path_utils, generate     # example import from src
-    import Browser, Chrome          # example import from objects
+    # import other source modules here
+    import path_utils
 
-    # DO YOUR STUFF below
-
-    # just an example
-    c1 = new Chrome()
-    c1.open()
-    c1.new_tab("https://github.com/adrianpothuaud/sikuli-ws")
+    DEBUG = True # set to False to disable logs
 
 
-**Comment your code !**
+    # define lists and dictionnaries here if necessary
+    SAMPLEDICTIONNARY1 = {
+        "sample1": "iamsample"
+    }
 
-**Use specscontext with a simple line:**
 
-    import specscontext
+    # define fonctions here
+    def sample_function_1(arg1, arg2=None):
+        """
+        A sample fonction.
 
-=> this enables imports for modules in src/ and src/objects/ !
+        Describe the fonction here...
+        Describe parameters.
+        Describe behavior.
+
+        :param arg1: sample parameter
+        :type arg1: str
+        :param arg2: sample parameter, default: None
+        :type arg2: list
+        :return: A dictionary
+        :rtype: dictionary
+
+        """
+        if DEBUG:
+            print("this is a sample fonction")
+        return {"sample": "this is useless"}
+
+
+
+**Comment and document your code !**
+
+**Create unit tests for any sources.**
+
+**Optionaly create specs module for on-the-go testing this source.**
 
 :sunglasses:
