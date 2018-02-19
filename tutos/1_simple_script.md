@@ -35,7 +35,7 @@ How to script
     4. use any other tool at your convenience
 3. Ensure you have
   1. ![google.png](1_simple_script.sikuli/google.png)
-  2. ![search.png](1_simple_script.sikuli/Search.png)
+  2. ![search.png](1_simple_script.sikuli/search.png)
   3. ![sikuli-script-home.png](1_simple_script.sikuli/sikuli-script-home.png)
 
 ###### Prepare the script
@@ -46,38 +46,38 @@ How to script
 5. Document your script and write basic common elements
 
 
-  	# -*- coding:utf-8 -*-
+	    # -*- coding:utf-8 -*-
 
-    """
+	    """
 
-        tutos/1_simple_script.sikuli/1_simple_script.py
+		tutos/1_simple_script.sikuli/1_simple_script.py
 
-        Sikuli first script
-        ===================
+		Sikuli first script
+		===================
 
-        see tutos/1_simple_script.md
+		see tutos/1_simple_script.md
 
-        Scenario
-        --------
+		Scenario
+		--------
 
-        Open webbrowser
-        Go to http://www.google.com
-        search for 'Sikuli'
-        wait first result
+		Open webbrowser
+		Go to http://www.google.com
+		search for 'Sikuli'
+		wait first result
 
-        Status
-        ------
+		Status
+		------
 
-        OK
-        date: 2/19/2018
+		OK
+		date: 2/19/2018
 
-        .. sectionauthor:: Adrian Pothuaud <adrianpothuaud2@gmail.com>
+		.. sectionauthor:: Adrian Pothuaud <adrianpothuaud2@gmail.com>
 
-    """
+	    """
 
-    from sikuli import *            # sikuli features
+	    from sikuli import *            # sikuli features
 
-    # write script below
+	    # write script below
 
 ###### Write the script
 
