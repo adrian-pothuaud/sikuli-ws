@@ -31,6 +31,6 @@ if __name__ == '__main__':
     with open(os.path.join(testscontext.outpath, 'test_reports', 'srcsample_tests', filename), 'w') as rf:
         runner = HTMLTestRunner.HTMLTestRunner(
             stream = rf, description="Unit testing src/srcsample. Environment: {}.".format(Env.getOS()),
-            title="Sample", dirTestScreenshots=os.path.join(testscontext.outpath, 'test_reports', 'srcsample_tests')
+            title="Sample", dirTestScreenshots=os.path.join(testscontext.outpath, 'test_reports', 'srcsample_tests', 'screenshots')
         )
         runner.run(tests)

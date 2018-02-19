@@ -5,8 +5,8 @@ Tests Folder
 - **unit testing sources**
 - **scenario testing applications**
 
-Write new tests
----------------
+Write new unit tests
+--------------------
 
 ##### *Follow below instructions*
 
@@ -55,3 +55,8 @@ Write new tests
 **Don't forget to create out/test_reports/srcsample_tests folder**
 
 :sunglasses:
+
+Write new test scenario
+-----------------------
+
+:zzz::zzz::zzz: ... coming soon ... :zzz::zzz::zzz:
