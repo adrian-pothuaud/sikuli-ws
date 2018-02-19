@@ -40,7 +40,7 @@ DEBUG = True
 APPS = {
     "MAC": {
         "google chrome": {
-            "path": ""
+            "path": r"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
         }
     },
     "WINDOWS": {
@@ -55,9 +55,17 @@ APPS = {
     }
 }
 
+"""
+    Shortcuts for MAC requires to be created
+        - System Preferences -> Keyboard
+        - Keyboard shortcuts -> Applications shortcuts
+
+    Create the followings:
+        - Application: ALL, Name: Zoom, shortcut:
+"""
 SHORTCUTS = {
     "MAC": {
-        "maximize": ()
+        "maximize": [Key.CTRL, Key.CMD, '=']
     },
     "WINDOWS": {
         "maximize": (Key.UP, Key.WIN)
@@ -99,6 +107,7 @@ def launch_app(app_name=None, app_path=None, wait_img=False, timeout=10):
             wait_img,
             timeout
         ))
+        print("Actual OS is {}".format(Env.getOS()))
     # guess image library
     img_lib = os.path.join(
         path_utils.get_parent_dirname(
@@ -125,21 +134,28 @@ def launch_app(app_name=None, app_path=None, wait_img=False, timeout=10):
         app.focus()
     if wait_img:
         print("Waiting for app images to ensure it is openned...")
+        start = os.path.join(
+            img_lib,
+            "start"
+        )
         imgs = glob.glob(
-            os.path.join(
-                img_lib,
-                app_name,
-                "start",
-                "*.png"
-            )
+            os.path.join(start, "*")
         )
         if DEBUG:
             print("All images to wait:")
             for im in imgs:
                 print("\t{},".format(im))
-        image_utils.wait_all(imgs)
+        img2 = []
+        for im in imgs:
+            im = im.split(os.sep)[-1]
+            img2.append(im)
+        path_utils.add_image_path(start)
+        path_utils.print_image_path()
+        image_utils.wait_all(img2)
         if DEBUG:
             print("App is openned !")
-    type(*maximize_shortcut)
+    if Env.isWindows():
+        type(*maximize_shortcut)
+    # ToDo: fix shortcuts for MAC
     if DEBUG:
         print('App should now be maximized.')

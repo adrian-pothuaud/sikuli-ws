@@ -15,7 +15,10 @@ class Browser(Application.Application):
         self.path = exec_path
     def new_tab(self, target_url = False):
         '''Open a new browser tab'''
-        type('t', Key.CTRL)
+        if Env.isWindows():
+            type('t', Key.CTRL)
+        elif Env.isMac():
+            type('t', Key.CMD)
         if target_url:
             wait(1)
             paste(target_url)

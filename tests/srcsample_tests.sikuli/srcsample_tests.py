@@ -2,6 +2,7 @@
 
 """
 ok 2/19/2018 - Windows
+ok 2/19/2018 - Mac
 """
 
 import unittest

@@ -44,6 +44,24 @@ import path_utils
 import image_utils
 
 
+def spe_imgpathutil(s):
+    """
+
+    """
+    path_utils.add_image_path(os.path.join(
+        testscontext.rootpath,
+        "imgs",
+        "leboncoin",
+        s
+    ))
+if Env.isWindows():
+    spe_imgpathutil('WINDOWS')
+elif Env.isMac():
+    spe_imgpathutil('MAC')
+else:
+    spe_imgpathutil('LINUX')
+
+
 # define test classes here
 # scenario 1
 class ICanCreateAnAccount(unittest.TestCase):
@@ -51,11 +69,6 @@ class ICanCreateAnAccount(unittest.TestCase):
     @classmethod
     def setUpClass(self):
         self.chrome = Chrome.Chrome()
-        path_utils.add_image_path(os.path.join(
-            testscontext.rootpath,
-            "imgs",
-            "leboncoin"
-        ))
         self.user = {
             "username": "unregistered{}{}{}{}".format(
                 now.month, now.day, now.hour, now.minute
@@ -74,6 +87,7 @@ class ICanCreateAnAccount(unittest.TestCase):
         self.chrome.open()
         wait(2)
         self.chrome.new_tab("https://www.leboncoin.fr/")
+        wait(2)
         wait("se_connecter.png", 10)
 
     def test_B_GoToLoginPanel(self):
@@ -95,10 +109,22 @@ class ICanCreateAnAccount(unittest.TestCase):
         ])
 
     def test_D_FillCreateAccountForm(self):
-        paste("pseudo_field.png", self.user["username"])
-        paste("email_field.png", self.user["email"])
-        paste("password_field.png", self.user["password"])
-        paste("password_confirm_field.png", self.user["password"])
+        click("pseudo_field.png")
+        wait(0.5)
+        paste(self.user["username"])
+        wait(0.5)
+        click("email_field.png")
+        wait(0.5)
+        paste(self.user["email"])
+        wait(0.5)
+        click("password_field.png")
+        wait(0.5)
+        paste(self.user["password"])
+        wait(0.5)
+        click("password_confirm_field.png")
+        wait(0.5)
+        paste(self.user["password"])
+        wait(0.5)
         find("conditions.png").click("checkbox.png")
         click("create_personal_account.png")
 
@@ -112,11 +138,6 @@ class ICanLoginWithValidUser(unittest.TestCase):
     @classmethod
     def setUpClass(self):
         self.chrome = Chrome.Chrome()
-        path_utils.add_image_path(os.path.join(
-            testscontext.rootpath,
-            "imgs",
-            "leboncoin"
-        ))
         self.user = {
             "username": "adrianpothuaud4",
             "email": "adrianpothuaud4@gmail.com",
@@ -133,6 +154,7 @@ class ICanLoginWithValidUser(unittest.TestCase):
     def test_A_GoToLeboncoin(self):
         self.chrome.open()
         self.chrome.new_tab("https://www.leboncoin.fr/")
+        wait(2)
         wait("se_connecter.png", 10)
 
     def test_B_GoToLoginPanel(self):
@@ -141,8 +163,12 @@ class ICanLoginWithValidUser(unittest.TestCase):
         image_utils.wait_all(["login_password.png", "login.png"])
 
     def test_C_FillLoginForm(self):
-        paste("login_email.png", self.user["email"])
-        paste("login_password.png", self.user["password"])
+        click("login_email.png")
+        wait(0.5)
+        paste(self.user["email"])
+        click("login_password.png")
+        wait(0.5)
+        paste(self.user["password"])
         click("login.png")
 
     def test_D_WaitMesannonces(self):
@@ -154,11 +180,6 @@ class ICannotLoginWithInvalidUser(unittest.TestCase):
     @classmethod
     def setUpClass(self):
         self.chrome = Chrome.Chrome()
-        path_utils.add_image_path(os.path.join(
-            testscontext.rootpath,
-            "imgs",
-            "leboncoin"
-        ))
         self.user = {
             "username": "unregistered123456",
             "email": "unregistered123456@test.com",
@@ -172,6 +193,7 @@ class ICannotLoginWithInvalidUser(unittest.TestCase):
     def test_A_GoToLeboncoin(self):
         self.chrome.open()
         self.chrome.new_tab("https://www.leboncoin.fr/")
+        wait(2)
         wait("se_connecter.png", 10)
 
     def test_B_GoToLoginPanel(self):
@@ -180,8 +202,12 @@ class ICannotLoginWithInvalidUser(unittest.TestCase):
         image_utils.wait_all(["login_password.png", "login.png"])
 
     def test_C_FillLoginForm(self):
-        paste("login_email.png", self.user["email"])
-        paste("login_password.png", self.user["password"])
+        click("login_email.png")
+        wait(0.5)
+        paste(self.user["email"])
+        click("login_password.png")
+        wait(0.5)
+        paste(self.user["password"])
         click("login.png")
 
     def test_D_WaitNoAccountMatch(self):

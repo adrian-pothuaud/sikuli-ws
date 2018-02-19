@@ -1,7 +1,11 @@
 # -*- coding:utf-8 -*-
 
 """
-ok 2/19/2018 - Windows
+    Unit Testing src/applications.sikuli
+
+    status:
+        - ok 2/19/2018 - Windows(7)
+        - ok 2/19/2018 - MAC(Mavericks)
 """
 
 import unittest
@@ -14,6 +18,9 @@ import applications
 class ApplicationsTestCase(unittest.TestCase):
 
     def setUp(self):
+        App.close('Google Chrome')
+
+    def tearDown(self):
         App.close('Google Chrome')
 
     def testLaunchChromeWithoutWaiting(self):
