@@ -97,3 +97,13 @@ Improved and custom sikuli features for image recognition and GUI interactions.
 
 A tutorials series for Sikuli and how to create a workspace similar to this one.
 On coming: tutorial to test the GUI of an application the proper way and validate or not distribution.
+
+
+Supported environments
+----------------------
+
+**Windows**
+
+**OsX**
+
+**Linux**
