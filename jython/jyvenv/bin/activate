@@ -40,7 +40,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="/Users/adrian/Documents/github/sikuli-ws/jython/jyvenv"
+VIRTUAL_ENV="/home/adrian/github/sikuli-ws/jython/jyvenv"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"

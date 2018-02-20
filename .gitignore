@@ -90,6 +90,12 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+*env
+*venv
+jython/jyvenv
+jython/jyvenv/
+bdd/bddjyvenv
+bdd/bddjyvenv/
 
 # Spyder project settings
 .spyderproject

@@ -6,6 +6,11 @@ Create Jython virtualenv
 
 - You should have Python AND Jython already installed
 - Install PIP (Python Package Manager) from [pip.pypa.io](https://pip.pypa.io/en/stable/installing/)
+
+  or type (Linux):
+
+    sudo apt install python-pip
+
 - type in CLI
 
       pip install virtualenv
@@ -29,7 +34,8 @@ Configure virtual environment
 
   - Linux:
 
-    ...
+    export CLASSPATH="/home/adrian/sikuli/sikulix.jar"
+
 
 - You should add sikulix.jar/Lib/sikuli to jyvenv/Lib
   - Windows:
@@ -39,7 +45,7 @@ Configure virtual environment
   - Mac:
     - extract sikulix.jar
 
-          tar xf sikulix.jar
+          jar xf sikulix.jar
 
     - copy sikuli library to virtual environment
 
@@ -52,7 +58,20 @@ Configure virtual environment
 
   - Linux:
 
-    ...
+    - extract sikulix.jar
+
+          jar xf sikulix.jar
+
+    - copy sikuli library to virtual environment
+
+          sudo cp -R sikuli/Lib/sikuli path_to_jyvenv/Lib/
+
+    - grant execution rights on jython/pip
+
+          sudo chmod +x jyvenv/bin/jython
+          sudo chmod +x jyvenv/bin/pip
+
+- Also add sikulix.jar to jyvenv/javalib
 
 
 Install additional dependencies

@@ -1,4 +1,4 @@
-#!/Users/adrian/Documents/github/sikuli-ws/jython/jyvenv/bin/python
+#!/home/adrian/github/sikuli-ws/jython/jyvenv/bin/python
 
 import sys
 import getopt

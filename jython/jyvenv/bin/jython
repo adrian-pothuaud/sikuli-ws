@@ -1,4 +1,4 @@
-#!/System/Library/Frameworks/Python.framework/Versions/2.7/Resources/Python.app/Contents/MacOS/Python -E
+#!/usr/bin/python2.7 -E
 # -*- coding: utf-8 -*-
 
 # Launch script for Jython. It may be wrapped as an executable with

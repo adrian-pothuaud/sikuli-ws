@@ -36,7 +36,7 @@ end
 # Unset irrelevant variables.
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV "/Users/adrian/Documents/github/sikuli-ws/jython/jyvenv"
+set -gx VIRTUAL_ENV "/home/adrian/github/sikuli-ws/jython/jyvenv"
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/bin" $PATH
