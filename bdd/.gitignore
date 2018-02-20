@@ -1,0 +1,9 @@
+*$py.class
+sikuli/.idea
+debug.txt
+test/.idea
+docs/build
+sikuli
+*.pyc
+log.txt
+.buildinfo

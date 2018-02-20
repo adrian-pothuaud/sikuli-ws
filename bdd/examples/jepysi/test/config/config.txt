@@ -1,0 +1,15 @@
+[vars]
+failCount=0
+failLimit=6
+dateFormat=%Y%m%d%H%M%S
+site=arjs.net
+useTimeStampForScreenShots=False
+additionalTab=False
+ignoreColor=False
+showActions=True
+doOpenWait=False
+openWaitTime=10
+doSwitchApp=False
+iePath=
+firefoxPath=
+chromePath=

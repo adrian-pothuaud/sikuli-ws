@@ -1,0 +1,602 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Tutorial &mdash; JePySi  documentation</title>
+    
+    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="JePySi  documentation" href="index.html" />
+    <link rel="next" title="Addons" href="Module/addons.html" />
+    <link rel="prev" title="Intro - JePySi Test Automation Framework" href="Intro.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="Module/addons.html" title="Addons"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="Intro.html" title="Intro - JePySi Test Automation Framework"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">JePySi  documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Tutorial</a><ul>
+<li><a class="reference internal" href="#step-1">Step 1</a></li>
+<li><a class="reference internal" href="#step-2">Step 2</a></li>
+<li><a class="reference internal" href="#step-3">Step 3</a></li>
+<li><a class="reference internal" href="#step-4">Step 4</a></li>
+<li><a class="reference internal" href="#step-5">Step 5</a></li>
+<li><a class="reference internal" href="#step-6">Step 6</a></li>
+<li><a class="reference internal" href="#step-7">Step 7</a></li>
+<li><a class="reference internal" href="#step-8">Step 8</a></li>
+<li><a class="reference internal" href="#step-9">Step 9</a></li>
+<li><a class="reference internal" href="#step-10">Step 10</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="Intro.html"
+                        title="previous chapter">Intro - JePySi Test Automation Framework</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="Module/addons.html"
+                        title="next chapter">Addons</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/Tutorial.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="tutorial">
+<h1>Tutorial<a class="headerlink" href="#tutorial" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="step-1">
+<h2>Step 1<a class="headerlink" href="#step-1" title="Permalink to this headline">¶</a></h2>
+<p>Setup your test environment.</p>
+<ul class="simple">
+<li>Create your project folder</li>
+<li>Unpack jepysi.jar</li>
+<li>Copy the <cite>test</cite> folder to your project folder</li>
+</ul>
+</div>
+<div class="section" id="step-2">
+<h2>Step 2<a class="headerlink" href="#step-2" title="Permalink to this headline">¶</a></h2>
+<p>Write your first feature into a feature file e.g. <cite>first.feature</cite></p>
+<div class="highlight-text"><div class="highlight"><pre>Feature: Check the JePySi basics
+         As a End-User I want to see the basic elements of the #domain#,
+         when I enter the [url] in a new tab,
+         so I&#39;m sure that the website is complete.
+
+Scenario: Check the basics
+          Given I have an open a browser
+          When I enter the [url] in a new tab
+          Then I should see the &quot;JePySi doc link&quot;
+          And I should see the &quot;JePySi Welcome&quot; title
+          And I should see the &quot;Top Navigation&quot; on the left top
+          And I should see the &quot;Navigation&quot; on the left
+</pre></div>
+</div>
+<p>Some remarks:</p>
+<ul class="simple">
+<li>#domain# is a constant</li>
+<li>[url] is an environment specific variable</li>
+<li>Text in double quotes are assets</li>
+</ul>
+</div>
+<div class="section" id="step-3">
+<h2>Step 3<a class="headerlink" href="#step-3" title="Permalink to this headline">¶</a></h2>
+<p>Run your first test:</p>
+<div class="highlight-python"><div class="highlight"><pre>&lt;path to sikuli&gt;runScript -r runner -f log.txt -- LOCAL features/first.feature
+</pre></div>
+</div>
+<p>Some remarks:</p>
+<ul class="simple">
+<li>&lt;path to sikuli&gt;: Path to the sikuli script</li>
+<li>&#8220;-f log.txt&#8221;: Capture all sikuli outputs to a file &#8220;log.txt&#8221;</li>
+<li>&#8220;LOCAL&#8221;: Use the local environment settings</li>
+<li>&#8220;features/first.feature&#8221; use this feature file</li>
+</ul>
+<p>Output:</p>
+<div class="highlight-python"><div class="highlight"><pre>filename &#39;README.md&#39; ignored...
+Import Took: 0:00:00.001000
+WARNING: given step not found: I have an open a browser
+WARNING: when step not found: I enter the [url] in a new tab
+WARNING: then step not found: I should see the &quot;JePySi doc link&quot;
+WARNING: then step not found: I should see the &quot;JePySi Welcome&quot; title
+WARNING: then step not found: I should see the &quot;Top Navigation&quot; on the left top
+WARNING: then step not found: I should see the &quot;Navigation&quot; on the left
+===========================================================================
+# File: /Users/alexrjs/Work/Code/py/jepysi/test/features/first.feature
+---------------------------------------------------------------------------
+ERROR: Exception (processfeature): Undefined steps. Cannot continue!
+FAILED: Feature Took: 0:00:00.012001
+Features Took: 0:00:00.022000
+
+0 loaded steps, 0 processed, 0 passed, 0 failed, 0 skipped, 6 undefined
+1 loaded scenarios, 0 processed, 0 passed, 0 failed, 0 skipped
+1 loaded features, 1 processed, 0 passed, 1 failed
+0 loaded assets, 0 unknown
+---------------------------------------------------------------------------
+@then(u&#39;I should see the &quot;Navigation&quot; on the left&#39;)
+def step_impl(testcontext):
+        asset = testcontext.assets[&quot;Navigation&quot;]
+        assert testcontext.browser.failed(testcontext.info, asset), testcontext.info
+
+
+@then(u&#39;I should see the &quot;JePySi Welcome&quot; title&#39;)
+def step_impl(testcontext):
+        asset = testcontext.assets[&quot;JePySi Welcome&quot;]
+        assert testcontext.browser.failed(testcontext.info, asset), testcontext.info
+
+
+@then(u&#39;I should see the &quot;JePySi doc link&quot;&#39;)
+def step_impl(testcontext):
+        asset = testcontext.assets[&quot;JePySi doc link&quot;]
+        assert testcontext.browser.failed(testcontext.info, asset), testcontext.info
+
+
+@given(u&#39;I have an open a browser&#39;)
+def step_impl(testcontext):
+        assert testcontext.browser.failed(testcontext.info, asset), testcontext.info
+
+
+@then(u&#39;I should see the &quot;Top Navigation&quot; on the left top&#39;)
+def step_impl(testcontext):
+        asset = testcontext.assets[&quot;Top Navigation&quot;]
+        assert testcontext.browser.failed(testcontext.info, asset), testcontext.info
+
+
+@when(u&#39;I enter the [url] in a new tab&#39;)
+def step_impl(testcontext):
+        assert testcontext.browser.failed(testcontext.info, asset), testcontext.info
+</pre></div>
+</div>
+<p><strong>Problem:</strong> Steps are not defined.</p>
+</div>
+<div class="section" id="step-4">
+<h2>Step 4<a class="headerlink" href="#step-4" title="Permalink to this headline">¶</a></h2>
+<p>Fix the step problems:</p>
+<ul>
+<li><p class="first">Mark the steps on the console copy them</p>
+</li>
+<li><p class="first">Open a new step file, e.g. <cite>step.py</cite> in the <cite>steps</cite> folder</p>
+</li>
+<li><p class="first">Put the following lines into the step file:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">sikuli.Sikuli</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">case</span> <span class="kn">import</span> <span class="o">*</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Paste the copied steps into the step file</p>
+</li>
+<li><p class="first">Edit the &#8220;I have an open a browser&#8221; and the &#8220;I enter the [url] in a new tab&#8221; assert and replace &#8221;, asset with &#8220;&#8217;&#8216;&#8221; (two single quotes), to prevent an &#8220;asset&#8221; not defined error.</p>
+</li>
+<li><p class="first">Do a second run</p>
+</li>
+</ul>
+<p>Output:</p>
+<div class="highlight-python"><div class="highlight"><pre>filename &#39;README.md&#39; ignored...
+Importing step file step.py
+Import Took: 0:00:00.013000
+===========================================================================
+# File: /Users/alexrjs/Work/Code/py/jepysi/test/features/first.feature
+---------------------------------------------------------------------------
+ERROR: Asset definition &#39;JePySi doc link&#39; not found!
+ERROR: Asset definition &#39;JePySi Welcome&#39; not found!
+ERROR: Asset definition &#39;Top Navigation&#39; not found!
+ERROR: Asset definition &#39;Navigation&#39; not found!
+ERROR: Exception (assetsdefinedcheck): Missing assets. Cannot continue!
+FAILED: Feature Took: 0:00:00.014000
+Features Took: 0:00:00.031000
+
+6 loaded steps, 0 processed, 0 passed, 0 failed, 0 skipped, 0 undefined
+1 loaded scenarios, 0 processed, 0 passed, 0 failed, 0 skipped
+1 loaded features, 1 processed, 0 passed, 1 failed
+0 loaded assets, 4 unknown
+---------------------------------------------------------------------------
+&quot;Top Navigation&quot; = ?
+&quot;Navigation&quot; = ?
+&quot;JePySi doc link&quot; = ?
+&quot;JePySi Welcome&quot; = ?
+===========================================================================
+</pre></div>
+</div>
+<p><strong>Problem:</strong> Assets are not defined. You can use the assets list at the bottom as template</p>
+</div>
+<div class="section" id="step-5">
+<h2>Step 5<a class="headerlink" href="#step-5" title="Permalink to this headline">¶</a></h2>
+<p>Fix the assets problems:</p>
+<ul>
+<li><p class="first">Start the Sikuli IDE and take screenshots from you assets and give them a good name</p>
+</li>
+<li><p class="first">Save the Sikuli IDE project to good place with a good name, e.g. &#8220;first&#8221; - the actual name would be &#8220;first.sikuli&#8221;</p>
+</li>
+<li><p class="first">Copy the images from the &#8220;first.sikuli&#8221; folder to the <cite>images</cite> folder within the <cite>test</cite> folder</p>
+</li>
+<li><p class="first">Add the Assets section to the feature file:</p>
+<div class="highlight-python"><div class="highlight"><pre>Assets:
+        &quot;Top Navigation&quot; = block-top-navi.png
+        &quot;Navigation&quot; = block-navi.png
+        &quot;JePySi doc link&quot; = link-jepysi-doc.png
+        &quot;JePySi Welcome&quot; = title-jepysi-welcome.png
+</pre></div>
+</div>
+</li>
+<li><p class="first">Do a third run</p>
+</li>
+</ul>
+<p>Output:</p>
+<div class="highlight-python"><div class="highlight"><pre>filename &#39;README.md&#39; ignored...
+Importing step file step.py
+Import Took: 0:00:00.011000
+===========================================================================
+# File: /Users/alexrjs/Work/Code/py/jepysi/test/features/first.feature
+---------------------------------------------------------------------------
+Feature: Check the JePySi basics
+ERROR: Exception (Feature): domain
+---------------------------------------------------------------------------
+ERROR: Exception (processfeature): domain
+FAILED: Feature Took: 0:00:00.026000
+Features Took: 0:00:00.047001
+
+6 loaded steps, 0 processed, 0 passed, 0 failed, 0 skipped, 0 undefined
+1 loaded scenarios, 0 processed, 0 passed, 0 failed, 0 skipped
+1 loaded features, 1 processed, 0 passed, 1 failed
+4 loaded assets, 0 unknown
+===========================================================================
+</pre></div>
+</div>
+<p><strong>Problem:</strong> Constants are not defined.</p>
+</div>
+<div class="section" id="step-6">
+<h2>Step 6<a class="headerlink" href="#step-6" title="Permalink to this headline">¶</a></h2>
+<p>Fix the constants problems:</p>
+<ul>
+<li><p class="first">Add the Constant section to the feature file:</p>
+<div class="highlight-python"><div class="highlight"><pre>Constants:
+        domain = jepysi.arjs.net/docs/
+</pre></div>
+</div>
+</li>
+<li><p class="first">Do a fourth run</p>
+</li>
+</ul>
+<p>Output:</p>
+<div class="highlight-python"><div class="highlight"><pre>filename &#39;README.md&#39; ignored...
+Importing step file step.py
+Import Took: 0:00:00.013001
+===========================================================================
+# File: /Users/alexrjs/Work/Code/py/jepysi/test/features/first.feature
+---------------------------------------------------------------------------
+Feature: Check the JePySi basics
+         As a End-User I want to see the basic elements of the jepysi.arjs.net/docs/,
+         when I enter the [url] in a new tab,
+         so I&#39;m sure that the website is complete.
+---------------------------------------------------------------------------
+  Check the basics
+    FAILED: Given: I have an open a browser ... failed in 0:00:00.588000
+    Scenario Took: 0:00:00.591000
+
+FAILED: Feature Took: 0:00:00.620001
+Features Took: 0:00:00.630999
+
+6 loaded steps, 1 processed, 0 passed, 1 failed, 0 skipped, 0 undefined
+1 loaded scenarios, 1 processed, 0 passed, 1 failed, 0 skipped
+1 loaded features, 1 processed, 0 passed, 1 failed
+4 loaded assets, 0 unknown
+===========================================================================
+</pre></div>
+</div>
+<p><strong>Problem:</strong> The <strong>first</strong> failed test.</p>
+</div>
+<div class="section" id="step-7">
+<h2>Step 7<a class="headerlink" href="#step-7" title="Permalink to this headline">¶</a></h2>
+<p>Fix the run problems:</p>
+<ul>
+<li><p class="first">Open the steps file and fix the failed test:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="nd">@given</span><span class="p">(</span><span class="s">u&#39;I have an open a browser&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">step_impl</span><span class="p">(</span><span class="n">testcontext</span><span class="p">):</span>
+        <span class="k">assert</span> <span class="n">testcontext</span><span class="o">.</span><span class="n">browser</span><span class="o">.</span><span class="n">open</span><span class="p">(),</span> <span class="n">testcontext</span><span class="o">.</span><span class="n">info</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Do another run</p>
+</li>
+</ul>
+<p>Output:</p>
+<div class="highlight-python"><div class="highlight"><pre>filename &#39;README.md&#39; ignored...
+Importing step file step.py
+Import Took: 0:00:00.009000
+===========================================================================
+# File: /Users/alexrjs/Work/Code/py/jepysi/test/features/first.feature
+---------------------------------------------------------------------------
+Feature: Check the JePySi basics
+         As a End-User I want to see the basic elements of the jepysi.arjs.net/docs/,
+         when I enter the [url] in a new tab,
+         so I&#39;m sure that the website is complete.
+---------------------------------------------------------------------------
+  Check the basics
+    PASSED: Given: I have an open a browser ... passed in 0:00:02.777000
+    ERROR: Exception: When: I enter the [url] in a new tab - LOCAL
+    Scenario Took: 0:00:02.784001
+
+FAILED: Feature Took: 0:00:02.815000
+Features Took: 0:00:02.823999
+
+6 loaded steps, 2 processed, 1 passed, 1 failed, 0 skipped, 0 undefined
+1 loaded scenarios, 1 processed, 0 passed, 1 failed, 0 skipped
+1 loaded features, 1 processed, 0 passed, 1 failed
+4 loaded assets, 0 unknown
+===========================================================================
+</pre></div>
+</div>
+<p><strong>Problem:</strong> The environment &#8220;LOCAL&#8221; is not defined.</p>
+</div>
+<div class="section" id="step-8">
+<h2>Step 8<a class="headerlink" href="#step-8" title="Permalink to this headline">¶</a></h2>
+<p>Fix the environment problems:</p>
+<ul>
+<li><p class="first">Add the Environment section to the feature file:</p>
+<div class="highlight-python"><div class="highlight"><pre>Environments:
+        LOCAL   : url = localhost:8090/docs/index.html
+        PROD    : url = jepysi.arjs.net/docs/index.html
+</pre></div>
+</div>
+</li>
+<li><p class="first">The final feature file should look like this now:</p>
+<blockquote>
+<div><div class="highlight-text"><div class="highlight"><pre>Assets:
+        &quot;Top Navigation&quot; = block-top-navi.png
+        &quot;Navigation&quot; = block-navi.png
+        &quot;JePySi doc link&quot; = link-jepysi-doc.png
+        &quot;JePySi Welcome&quot; = title-jepysi-welcome.png
+
+Constants:
+        domain = jepysi.arjs.net/docs/
+
+Environments:
+        LOCAL   : url = localhost:8090/docs/index.html
+        PROD    : url = jepysi.arjs.net/docs/index.html
+
+Feature: Check the JePySi basics
+                 As a End-User I want to see the basic elements of the #domain#,
+                 when I enter the [url],
+                 so I&#39;m sure that the website is complete.
+
+Scenario: Check the basics
+                  Given I have an open a browser
+                  When I enter the [url] in a new tab
+                  Then I should see the &quot;JePySi doc link&quot;
+                  And I should see the &quot;JePySi Welcome&quot; title
+                  And I should see the &quot;Top Navigation&quot; on the left top
+                  And I should see the &quot;Navigation&quot; on the left
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Do another run</p>
+</li>
+</ul>
+<p>Output:</p>
+<div class="highlight-python"><div class="highlight"><pre>filename &#39;README.md&#39; ignored...
+Importing step file step.py
+Import Took: 0:00:00.016999
+===========================================================================
+# File: /Users/alexrjs/Work/Code/py/jepysi/test/features/first.feature
+---------------------------------------------------------------------------
+Feature: Check the JePySi basics
+         As a End-User I want to see the basic elements of the jepysi.arjs.net/docs/,
+         when I enter the localhost:8090/docs/index.html in a new tab,
+         so I&#39;m sure that the website is complete.
+---------------------------------------------------------------------------
+  Check the basics
+    PASSED: Given: I have an open a browser ... passed in 0:00:02.701000
+    FAILED: When: I enter the localhost:8090/docs/index.html ... failed in 0:00:00.282000
+    Scenario Took: 0:00:02.997999
+
+FAILED: Feature Took: 0:00:03.038000
+Features Took: 0:00:03.050000
+
+6 loaded steps, 2 processed, 1 passed, 1 failed, 0 skipped, 0 undefined
+1 loaded scenarios, 1 processed, 0 passed, 1 failed, 0 skipped
+1 loaded features, 1 processed, 0 passed, 1 failed
+4 loaded assets, 0 unknown
+===========================================================================
+</pre></div>
+</div>
+<p><strong>Problem:</strong> Step failed. Ok, lets fix it. And while we on it, we implement the rest, too.</p>
+</div>
+<div class="section" id="step-9">
+<h2>Step 9<a class="headerlink" href="#step-9" title="Permalink to this headline">¶</a></h2>
+<p>Fix the run problems:</p>
+<ul>
+<li><p class="first">Open the steps file and fix the failed test:</p>
+<div class="highlight-python"><div class="highlight"><pre>@when(u&#39;I enter the [url] in a new tab&#39;)
+def step_impl(testcontext):
+    assert testcontext.browser.failed(testcontext.info, &#39;&#39;), testcontext.info
+
+with:
+
+@when(u&#39;I enter the [url] in a new tab&#39;)
+def step_impl(testcontext):
+    assert testcontext.browser.opentab(), testcontext.info
+    envurl = testcontext.environments[testcontext.environment][&quot;url&quot;]
+    assert testcontext.browser.navigateto(envurl), testcontext.info
+</pre></div>
+</div>
+</li>
+<li><p class="first">While we on it we fix the rest, so the step file looks like this:</p>
+<blockquote>
+<div><div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">sikuli.Sikuli</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">case</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="nd">@then</span><span class="p">(</span><span class="s">u&#39;I should see the &quot;Navigation&quot; on the left&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">step_impl</span><span class="p">(</span><span class="n">testcontext</span><span class="p">):</span>
+    <span class="n">asset</span> <span class="o">=</span> <span class="n">testcontext</span><span class="o">.</span><span class="n">assets</span><span class="p">[</span><span class="s">&quot;Navigation&quot;</span><span class="p">]</span>
+    <span class="k">assert</span> <span class="n">testcontext</span><span class="o">.</span><span class="n">browser</span><span class="o">.</span><span class="n">checkifexists</span><span class="p">(</span><span class="n">asset</span><span class="p">),</span> <span class="n">testcontext</span><span class="o">.</span><span class="n">info</span>
+
+
+<span class="nd">@then</span><span class="p">(</span><span class="s">u&#39;I should see the &quot;JePySi Welcome&quot; title&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">step_impl</span><span class="p">(</span><span class="n">testcontext</span><span class="p">):</span>
+    <span class="n">asset</span> <span class="o">=</span> <span class="n">testcontext</span><span class="o">.</span><span class="n">assets</span><span class="p">[</span><span class="s">&quot;JePySi Welcome&quot;</span><span class="p">]</span>
+    <span class="k">assert</span> <span class="n">testcontext</span><span class="o">.</span><span class="n">browser</span><span class="o">.</span><span class="n">checkifexists</span><span class="p">(</span><span class="n">asset</span><span class="p">),</span> <span class="n">testcontext</span><span class="o">.</span><span class="n">info</span>
+
+
+<span class="nd">@then</span><span class="p">(</span><span class="s">u&#39;I should see the &quot;JePySi doc link&quot;&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">step_impl</span><span class="p">(</span><span class="n">testcontext</span><span class="p">):</span>
+    <span class="n">asset</span> <span class="o">=</span> <span class="n">testcontext</span><span class="o">.</span><span class="n">assets</span><span class="p">[</span><span class="s">&quot;JePySi doc link&quot;</span><span class="p">]</span>
+    <span class="k">assert</span> <span class="n">testcontext</span><span class="o">.</span><span class="n">browser</span><span class="o">.</span><span class="n">checkifexists</span><span class="p">(</span><span class="n">asset</span><span class="p">),</span> <span class="n">testcontext</span><span class="o">.</span><span class="n">info</span>
+
+
+<span class="nd">@given</span><span class="p">(</span><span class="s">u&#39;I have an open a browser&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">step_impl</span><span class="p">(</span><span class="n">testcontext</span><span class="p">):</span>
+    <span class="k">assert</span> <span class="n">testcontext</span><span class="o">.</span><span class="n">browser</span><span class="o">.</span><span class="n">open</span><span class="p">(),</span> <span class="n">testcontext</span><span class="o">.</span><span class="n">info</span>
+
+
+<span class="nd">@then</span><span class="p">(</span><span class="s">u&#39;I should see the &quot;Top Navigation&quot; on the left top&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">step_impl</span><span class="p">(</span><span class="n">testcontext</span><span class="p">):</span>
+    <span class="n">asset</span> <span class="o">=</span> <span class="n">testcontext</span><span class="o">.</span><span class="n">assets</span><span class="p">[</span><span class="s">&quot;Top Navigation&quot;</span><span class="p">]</span>
+    <span class="k">assert</span> <span class="n">testcontext</span><span class="o">.</span><span class="n">browser</span><span class="o">.</span><span class="n">checkifexists</span><span class="p">(</span><span class="n">asset</span><span class="p">),</span> <span class="n">testcontext</span><span class="o">.</span><span class="n">info</span>
+
+
+<span class="nd">@when</span><span class="p">(</span><span class="s">u&#39;I enter the [url] in a new tab&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">step_impl</span><span class="p">(</span><span class="n">testcontext</span><span class="p">):</span>
+    <span class="k">assert</span> <span class="n">testcontext</span><span class="o">.</span><span class="n">browser</span><span class="o">.</span><span class="n">opentab</span><span class="p">(),</span> <span class="n">testcontext</span><span class="o">.</span><span class="n">info</span>
+    <span class="n">envurl</span> <span class="o">=</span> <span class="n">testcontext</span><span class="o">.</span><span class="n">environments</span><span class="p">[</span><span class="n">testcontext</span><span class="o">.</span><span class="n">environment</span><span class="p">][</span><span class="s">&quot;url&quot;</span><span class="p">]</span>
+    <span class="k">assert</span> <span class="n">testcontext</span><span class="o">.</span><span class="n">browser</span><span class="o">.</span><span class="n">navigateto</span><span class="p">(</span><span class="n">envurl</span><span class="p">),</span> <span class="n">testcontext</span><span class="o">.</span><span class="n">info</span>
+    <span class="k">assert</span> <span class="n">testcontext</span><span class="o">.</span><span class="n">browser</span><span class="o">.</span><span class="n">enterkey</span><span class="p">(</span><span class="n">Key</span><span class="o">.</span><span class="n">ENTER</span><span class="p">),</span> <span class="n">testcontext</span><span class="o">.</span><span class="n">info</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Do another run</p>
+</li>
+</ul>
+<p>Output:</p>
+<div class="highlight-python"><div class="highlight"><pre>filename &#39;README.md&#39; ignored...
+Importing step file step.py
+Import Took: 0:00:00.011999
+===========================================================================
+# File: /Users/alexrjs/Work/Code/py/jepysi/test/features/first.feature
+---------------------------------------------------------------------------
+Feature: Check the JePySi basics
+         As a End-User I want to see the basic elements of the jepysi.arjs.net/docs/,
+         when I enter the localhost:8090/docs/index.html,
+         so I&#39;m sure that the website is complete.
+---------------------------------------------------------------------------
+  Check the basics
+    PASSED: Given: I have an open a browser ... passed in 0:00:02.728001
+    PASSED: When: I enter the localhost:8090/docs/index.html in a new tab ... passed in 0:00:02.808001
+    PASSED: Then: I should see the &quot;JePySi doc link&quot; ... passed in 0:00:06.715001
+    PASSED: Then: I should see the &quot;JePySi Welcome&quot; title ... passed in 0:00:01.441000
+    PASSED: Then: I should see the &quot;Top Navigation&quot; on the left top ... passed in 0:00:01.542001
+    PASSED: Then: I should see the &quot;Navigation&quot; on the left ... passed in 0:00:01.434000
+    Scenario Took: 0:00:16.680001
+
+PASSED: Feature Took: 0:00:16.714000
+Features Took: 0:00:16.723999
+
+6 loaded steps, 6 processed, 6 passed, 0 failed, 0 skipped, 0 undefined
+1 loaded scenarios, 1 processed, 1 passed, 0 failed, 0 skipped
+1 loaded features, 1 processed, 1 passed, 0 failed
+4 loaded assets, 0 unknown
+===========================================================================
+</pre></div>
+</div>
+<p><strong>Congrats:</strong> You&#8217;ve successfully created and run your first &#8220;JePySi&#8221; test.</p>
+</div>
+<div class="section" id="step-10">
+<h2>Step 10<a class="headerlink" href="#step-10" title="Permalink to this headline">¶</a></h2>
+<p>Some remarks:</p>
+<ul class="simple">
+<li>Of course you can combine the steps. In fact when you get more experience, you certainly will do steps right away to avoid unneccessary runs</li>
+<li>If you do more feature files, you&#8217;ll see there is a lot of dublication involved, so you should start using the simple inheritance system. E.g. put stuff into &#8220;_&#8221; feature files and use special scenarios like &#8220;Setup&#8221;, &#8220;Cleanup&#8221;, &#8220;After&#8221; and &#8220;Before&#8221;. See the &#8220;JePySi&#8221; sample to see these features in action and how to use them</li>
+<li>Group feature files which belong together into folders</li>
+<li>In case you encounter different rendering, use the &#8220;OR&#8221; feature in the Assets definition; See &#8220;JePySi&#8221; example for the usage</li>
+<li>Start using Jenkins as CI System and use JePySi within Jenkins together with VMs, if you can</li>
+<li>Check out the &#8220;logs&#8221; and &#8220;reports&#8221; folder for their information, to see how you can use them</li>
+<li>If you have questions or feedback, get in touch with me at info(at)arjs.net</li>
+</ul>
+<p>Have fun...</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="Module/addons.html" title="Addons"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="Intro.html" title="Intro - JePySi Test Automation Framework"
+             >previous</a> |</li>
+        <li><a href="index.html">JePySi  documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, arjs.net.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.1.
+    </div>
+  </body>
+</html>

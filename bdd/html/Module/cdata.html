@@ -1,0 +1,167 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>CData &mdash; JePySi  documentation</title>
+    
+    <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="JePySi  documentation" href="../index.html" />
+    <link rel="next" title="Context" href="context.html" />
+    <link rel="prev" title="Case" href="case.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="context.html" title="Context"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="case.html" title="Case"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">JePySi  documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="case.html"
+                        title="previous chapter">Case</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="context.html"
+                        title="next chapter">Context</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/Module/cdata.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-cdata">
+<span id="cdata"></span><h1>CData<a class="headerlink" href="#module-cdata" title="Permalink to this headline">¶</a></h1>
+<p>Module:  cdata</p>
+<p>Author:  arjs.net</p>
+<p>License: <a class="reference external" href="http://opensource.org/licenses/mit-license.html">http://opensource.org/licenses/mit-license.html</a>; year=2013,2014; copyright holders=arjs.net</p>
+<p>Module for the cdata extension</p>
+<dl class="class">
+<dt id="cdata.ElementTreeCDATA">
+<em class="property">class </em><tt class="descclassname">cdata.</tt><tt class="descname">ElementTreeCDATA</tt><big>(</big><em>element=None</em>, <em>file=None</em><big>)</big><a class="headerlink" href="#cdata.ElementTreeCDATA" title="Permalink to this definition">¶</a></dt>
+<dd><p>ElementTreeCDATA: Extension to write a cdata section to a xml file</p>
+<dl class="method">
+<dt id="cdata.ElementTreeCDATA._write">
+<tt class="descname">_write</tt><big>(</big><em>xmlfile</em>, <em>node</em>, <em>encoding</em>, <em>namespaces</em><big>)</big><a class="headerlink" href="#cdata.ElementTreeCDATA._write" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>xmlfile</strong> (<em>file</em>) &#8211; xml file to write</li>
+<li><strong>node</strong> (<em>Element</em>) &#8211; Node element to write</li>
+<li><strong>encoding</strong> (<em>str</em>) &#8211; Encoding type</li>
+<li><strong>namespaces</strong> (<em>str</em>) &#8211; Namespace to use</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Write the xml data extended with cdata block(s)</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="cdata.cdata">
+<tt class="descclassname">cdata.</tt><tt class="descname">cdata</tt><big>(</big><em>text=None</em><big>)</big><a class="headerlink" href="#cdata.cdata" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>text</strong> (<em>str</em>) &#8211; cdata content</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">Element</td>
+</tr>
+</tbody>
+</table>
+<p>Create a cdata element</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="context.html" title="Context"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="case.html" title="Case"
+             >previous</a> |</li>
+        <li><a href="../index.html">JePySi  documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, arjs.net.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.1.
+    </div>
+  </body>
+</html>

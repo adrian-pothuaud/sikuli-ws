@@ -1,0 +1,5 @@
+[vars]
+showActions=False
+doOpenWait=True
+openWaitTime=10
+doSwitchApp=True

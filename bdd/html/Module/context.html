@@ -1,0 +1,263 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Context &mdash; JePySi  documentation</title>
+    
+    <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="JePySi  documentation" href="../index.html" />
+    <link rel="next" title="Counts" href="counts.html" />
+    <link rel="prev" title="CData" href="cdata.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="counts.html" title="Counts"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="cdata.html" title="CData"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">JePySi  documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="cdata.html"
+                        title="previous chapter">CData</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="counts.html"
+                        title="next chapter">Counts</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/Module/context.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-context">
+<span id="context"></span><h1>Context<a class="headerlink" href="#module-context" title="Permalink to this headline">¶</a></h1>
+<p>Module:  context</p>
+<p>Author:  arjs.net</p>
+<p>License: <a class="reference external" href="http://opensource.org/licenses/mit-license.html">http://opensource.org/licenses/mit-license.html</a>; year=2013,2014; copyright holders=arjs.net</p>
+<p>Module for the test context</p>
+<dl class="class">
+<dt id="context.Context">
+<em class="property">class </em><tt class="descclassname">context.</tt><tt class="descname">Context</tt><big>(</big><em>stats</em><big>)</big><a class="headerlink" href="#context.Context" title="Permalink to this definition">¶</a></dt>
+<dd><p>Context: Holds the context information for the tests</p>
+<dl class="method">
+<dt id="context.Context.__init__">
+<tt class="descname">__init__</tt><big>(</big><em>stats</em><big>)</big><a class="headerlink" href="#context.Context.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>stats</strong> (<em>Counts</em>) &#8211; Counts object</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">Context</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="context.Context.appendenvironment">
+<tt class="descname">appendenvironment</tt><big>(</big><em>key</em>, <em>value</em>, <em>env=''</em><big>)</big><a class="headerlink" href="#context.Context.appendenvironment" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>key</strong> (<em>str</em>) &#8211; key to use</li>
+<li><strong>value</strong> (<em>object</em>) &#8211; Value to set</li>
+<li><strong>env</strong> (<em>object</em>) &#8211; Environment key</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Appends an environment</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="context.Context.appendundefined">
+<tt class="descname">appendundefined</tt><big>(</big><em>key</em>, <em>value</em><big>)</big><a class="headerlink" href="#context.Context.appendundefined" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>key</strong> (<em>str</em>) &#8211; </li>
+<li><strong>value</strong> (<em>object</em>) &#8211; </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Append an undefined step to a list</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="context.Context.appendunknown">
+<tt class="descname">appendunknown</tt><big>(</big><em>key</em>, <em>value</em><big>)</big><a class="headerlink" href="#context.Context.appendunknown" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>key</strong> (<em>str</em>) &#8211; </li>
+<li><strong>value</strong> (<em>object</em>) &#8211; </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Append an undefined images to a list</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="context.Context.getenvironmentvalue">
+<tt class="descname">getenvironmentvalue</tt><big>(</big><em>key</em>, <em>env=''</em><big>)</big><a class="headerlink" href="#context.Context.getenvironmentvalue" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>key</strong> (<em>str</em>) &#8211; Key to use</li>
+<li><strong>env</strong> (<em>object</em>) &#8211; Environment to return</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">object</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Returns the environment values</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="context.Context.listundefined">
+<tt class="descname">listundefined</tt><big>(</big><big>)</big><a class="headerlink" href="#context.Context.listundefined" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">None</td>
+</tr>
+</tbody>
+</table>
+<p>Outputs the list of undefined steps</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="context.Context.listunknown">
+<tt class="descname">listunknown</tt><big>(</big><big>)</big><a class="headerlink" href="#context.Context.listunknown" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">None</td>
+</tr>
+</tbody>
+</table>
+<p>Outputs the list of undefined images</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="counts.html" title="Counts"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="cdata.html" title="CData"
+             >previous</a> |</li>
+        <li><a href="../index.html">JePySi  documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, arjs.net.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.1.
+    </div>
+  </body>
+</html>

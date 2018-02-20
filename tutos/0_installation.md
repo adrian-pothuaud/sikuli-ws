@@ -109,6 +109,19 @@ Installation
 ------------
 
 
+Download SikuliX 1.1.1 from [launchpad](https://launchpad.net/sikuli/sikulix/1.1.1).
+Run it once you have completed all pre-requirements.
+
+
+In order to use Python2 for sikuli programming and enable OCR engine, make installation options as below:
+
+
+![sikuli setup](res/sikuli_setup.png)
+
+
+Then click Yes in any other panel and wait for the installation to be complete.
+
+
 ___
 
 
@@ -116,11 +129,51 @@ Usage
 -----
 
 
+In order to run SikuliX, you should have a runsikuli script in the installation path.
+Running it will launch the sikuli IDE:
+
+
+![sikuli ide](res/sikuli_ide.png)
+
+To run Sikuli script you can either:
+
+- Type code in sikuli IDE and click the Run button
+
+e.g:
+
+![hello world ide](res/hello_ide.png)
+
+- Type code with and external text editor and run with command line
+
+    path_to_runsikulix -r path_to_sikuli_script.sikuli
+
+e.g:
+
+    $ C:\SikuliX\runsikulix.cmd -r C:\Users\apd2\Desktop\test.sikuli
+    +++ running this Java
+    java version "1.8.0_121"
+    Java(TM) SE Runtime Environment (build 1.8.0_121-b13)
+    Java HotSpot(TM) 64-Bit Server VM (build 25.121-b13, mixed mode)
+    +++ trying to run SikuliX
+    +++ using: -Xms64M -Xmx512M -Dfile.encoding=UTF-8 -Dsikuli.FromCommandLine -jar C:\SikuliX\sikulix.jar -r C:\Users\apd2\Desktop\test.sikuli
+    Hello World !
 ___
 
 
 Tips
 ----
+
+
+#### Add sikuli pre-requisites and elements to path
+
+
+###### Windows
+
+
+###### Mac
+
+
+###### Linux
 
 
 ___

@@ -1,0 +1,359 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Runner &mdash; JePySi  documentation</title>
+    
+    <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="JePySi  documentation" href="../index.html" />
+    <link rel="prev" title="Region" href="region.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="region.html" title="Region"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">JePySi  documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="region.html"
+                        title="previous chapter">Region</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/Module/runner.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-runner">
+<span id="runner"></span><h1>Runner<a class="headerlink" href="#module-runner" title="Permalink to this headline">¶</a></h1>
+<p>Module:  runner</p>
+<p>Author:  arjs.net</p>
+<p>License: <a class="reference external" href="http://opensource.org/licenses/mit-license.html">http://opensource.org/licenses/mit-license.html</a>; year=2013,2014; copyright holders=arjs.net</p>
+<p>Main module for the sikuli system</p>
+<dl class="function">
+<dt id="runner.assetsdefinedcheck">
+<tt class="descclassname">runner.</tt><tt class="descname">assetsdefinedcheck</tt><big>(</big><em>scenarios</em><big>)</big><a class="headerlink" href="#runner.assetsdefinedcheck" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>scenarios</strong> (<em>[]</em>) &#8211; Scenario to check for assets</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+<p>Check if used assets are defined</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="runner.constantsdefinedcheck">
+<tt class="descclassname">runner.</tt><tt class="descname">constantsdefinedcheck</tt><big>(</big><em>scenarios</em><big>)</big><a class="headerlink" href="#runner.constantsdefinedcheck" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>scenarios</strong> (<em>[]</em>) &#8211; Scenario to check for constants</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+<p>Check if used constantes are defined</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="runner.extract">
+<tt class="descclassname">runner.</tt><tt class="descname">extract</tt><big>(</big><em>filename</em><big>)</big><a class="headerlink" href="#runner.extract" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>filename</strong> (<em>str</em>) &#8211; Feature file</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">tuple</td>
+</tr>
+</tbody>
+</table>
+<p>Extract the feature details from the feature file</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="runner.extractusedassets">
+<tt class="descclassname">runner.</tt><tt class="descname">extractusedassets</tt><big>(</big><em>checkassets</em>, <em>possibleassets</em><big>)</big><a class="headerlink" href="#runner.extractusedassets" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>checkassets</strong> (<em>[]</em>) &#8211; Assets to check</li>
+<li><strong>possibleassets</strong> (<em>[]</em>) &#8211; Possible assets</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Extract the assets from the current used steps</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="runner.extractusedconstants">
+<tt class="descclassname">runner.</tt><tt class="descname">extractusedconstants</tt><big>(</big><em>checkconstants</em>, <em>possibleconstants</em><big>)</big><a class="headerlink" href="#runner.extractusedconstants" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>checkconstants</strong> (<em>[]</em>) &#8211; Constants to check</li>
+<li><strong>possibleconstants</strong> (<em>[]</em>) &#8211; Possible constants</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Extract the constants from the current used steps</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="runner.featurelooper">
+<tt class="descclassname">runner.</tt><tt class="descname">featurelooper</tt><big>(</big><em>fileorpath</em><big>)</big><a class="headerlink" href="#runner.featurelooper" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>fileorpath</strong> (<em>str</em>) &#8211; Feature or Features path</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">None</td>
+</tr>
+</tbody>
+</table>
+<p>Loop over the features</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Raises EnvironmentError:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="runner.goodbye">
+<tt class="descclassname">runner.</tt><tt class="descname">goodbye</tt><big>(</big><big>)</big><a class="headerlink" href="#runner.goodbye" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">None</td>
+</tr>
+</tbody>
+</table>
+<p>Exit function</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="runner.main">
+<tt class="descclassname">runner.</tt><tt class="descname">main</tt><big>(</big><big>)</big><a class="headerlink" href="#runner.main" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">None</td>
+</tr>
+</tbody>
+</table>
+<p>Main function</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Raises e:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="runner.onexit">
+<tt class="descclassname">runner.</tt><tt class="descname">onexit</tt><big>(</big><em>f</em><big>)</big><a class="headerlink" href="#runner.onexit" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>f</strong> (<em>function</em>) &#8211; Exit function</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">function</td>
+</tr>
+</tbody>
+</table>
+<p>Marker for the exit function</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="runner.processfeature">
+<tt class="descclassname">runner.</tt><tt class="descname">processfeature</tt><big>(</big><em>path</em>, <em>featurefile</em><big>)</big><a class="headerlink" href="#runner.processfeature" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>path</strong> (<em>str</em>) &#8211; Path to the featurefile</li>
+<li><strong>featurefile</strong> (<em>str</em>) &#8211; File with the feature</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">bool</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Process one feature</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Raises EnvironmentError:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="runner.reportfeatureresults">
+<tt class="descclassname">runner.</tt><tt class="descname">reportfeatureresults</tt><big>(</big><em>isall</em>, <em>path</em>, <em>featurefile</em><big>)</big><a class="headerlink" href="#runner.reportfeatureresults" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>isall</strong> (<em>bool</em>) &#8211; Flag if to create a more detailed folder structure</li>
+<li><strong>path</strong> (<em>str</em>) &#8211; PAth to the reports</li>
+<li><strong>featurefile</strong> (<em>str</em>) &#8211; Feature file name</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Write the test report to the report folder depending on the kind of test</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="runner.stepimporter">
+<tt class="descclassname">runner.</tt><tt class="descname">stepimporter</tt><big>(</big><big>)</big><a class="headerlink" href="#runner.stepimporter" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">None</td>
+</tr>
+</tbody>
+</table>
+<p>Imports the steps for the test cases</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Raises Exception:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="region.html" title="Region"
+             >previous</a> |</li>
+        <li><a href="../index.html">JePySi  documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, arjs.net.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.1.
+    </div>
+  </body>
+</html>
