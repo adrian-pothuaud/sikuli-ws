@@ -179,6 +179,12 @@ Tips
 ___
 
 
+[NEXT Tutorial](https://github.com/adrianpothuaud/sikuli-ws/blob/master/tutos/1_simple_script.md)
+
+
+___
+
+
 last update 2/19/2018
 
 

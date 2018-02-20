@@ -56,6 +56,14 @@ in a shell write
 	java -jar path_to_sikulix.jar -r path_to_script.sikuli
 
 
+___
+
+
+[Previous Tuto]() <-----------------------------> [Next Tuto]()
+
+___
+
+
 last update 2/19/2018
 
 :sunglasses:
