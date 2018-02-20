@@ -17,8 +17,9 @@ if DEBUG:
         print("\t{}".format(s))
 
 for script in scriptslist:
-    if DEBUG:
-        print("Script: {} is going to be executed...".format(script))
-    runScript(script)
+    if "run_all" not in script and "context" not in script:
+        if DEBUG:
+            print("Script: {} is going to be executed...".format(script))
+        runScript(script)
 if DEBUG:
     print("All scripts have been launched ! Bye Bye ...")
