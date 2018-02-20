@@ -72,6 +72,8 @@ Pros | Cons
 ---- | ----
 no .sikuli parent | interprete with Jython
 easier imports   | no more available in SikuliX IDE
+additional dependencies available with pip  |
+support for virtual environments  |
 
 
 #### [out](https://github.com/adrianpothuaud/sikuli-ws/tree/master/out)
