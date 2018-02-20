@@ -67,31 +67,65 @@ This will let you take a screenshot... You can then play wit your new variable '
 		[log] CLICK on L(290,1058)@S(0)[0,0 1920x1080] (521 msec)
 		1
 
-Identify Repeated code
-----------------------
+Identify potential variables
+----------------------------
+
+Anything that:
+- is repeated
+- is potentialy changeable
+
+Should become a variable.
+
+		import webbrowser              				# python web browser automation
+
+
+		# open google
+		webbrowser.open("http://www.google.com") 	  # can change
+		wait("google.png")                             # repeated "google.png"
+		# type 'Sikuli'
+		click("google.png")            			    # repeated "google.png"
+		paste("Sikuli")								# can change
+		wait(0.5)					  				# can change
+		# search
+		Region(200, 200, 200, 200).getCenter().click() # region can change
+		wait(1)										# can change
+		click("search.png")						    # can change
+		# wait result
+		wait("sikuli-script-home.png") 				# can change
+
+
+Modify the script
+-----------------
 
 		import webbrowser               # python web browser automation
 
 
-		# open google
-		webbrowser.open("http://www.google.com")
-		wait("google.png")             # repeated "google.png"
-		# type 'Sikuli'
-		click("google.png")            # repeated "google.png"
-		paste("Sikuli")
-		wait(0.5)
+		# reusable variables
+		url         = "http://www.google.com"
+		google      = "google.png"
+		query       = "SikuliX"
+		topleft     = Region(200, 200, 200, 200)
+		search      = "search.png"
+		defaultWait = 0.5
+		result      = "sikuli-script-home.png"
+
+
+		# open an url
+		webbrowser.open(url)
+		wait(google)
+
+		# type a query
+		click(google)
+		paste(query)
+		wait(defaultWait)
+
 		# search
-		Region(200, 200, 200, 200).getCenter().click()
-		wait(1)
-		click("search.png")
+		topleft.getCenter().click()
+		wait(defaultWait)
+		click(search)
+
 		# wait result
-		wait("sikuli-script-home.png")
-
-Modify the script
-
-
-The Final script
-----------------
+		wait(result)
 
 
 Run the script
