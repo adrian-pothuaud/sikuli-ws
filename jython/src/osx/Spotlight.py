@@ -13,22 +13,27 @@ Description
 
 from sikuli import *
 
+import os
+
 DEBUG = True
 
-root = os.path.dirname(os.path.dirname(os.path.dirname(getBundlePath())))
+if DEBUG:
+    print("RUN THIS SCRIPT FROM sikuli-ws/jtyhon/")
+root = os.getcwd()
 if DEBUG:
     print("module's root path: {}".format(root))
-# noinspection SpellCheckingInspection
-img_lib = os.path.join(root, "imgs", "spotlight")
-if DEBUG:
-    print("module's image path: {}".format(img_lib))
-addImagePath(img_lib)
+def getImg(path):
+    """
+
+    """
+    img_lib = os.path.join(root, "imgs", "osx", "spotlight")
+    return os.path.join()
 
 
 class Spotlight:
 
     def __init__(self):
-        pass
+        self.search_icon = os.path.join()
 
     def open(self):
         """

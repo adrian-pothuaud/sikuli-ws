@@ -84,3 +84,7 @@ Run a script
 ------------
 
     jyvenv/bin/jython tests/sample_test.py
+
+
+Limitations
+-----------
