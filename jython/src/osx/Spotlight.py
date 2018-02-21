@@ -22,18 +22,19 @@ if DEBUG:
 root = os.getcwd()
 if DEBUG:
     print("module's root path: {}".format(root))
+
 def getImg(path):
     """
 
     """
     img_lib = os.path.join(root, "imgs", "osx", "spotlight")
-    return os.path.join()
+    return os.path.join(img_lib, "{}.png".format(path))
 
 
 class Spotlight:
 
     def __init__(self):
-        self.search_icon = os.path.join()
+        self.search_icon = getImg("search_icon")
 
     def open(self):
         """
@@ -41,7 +42,7 @@ class Spotlight:
         :return:
         """
         type(Key.SPACE, Key.CMD)
-        wait("search_icon.png", 10).higlight(1)
+        wait(2)
         if DEBUG:
             print("Spotlight is open")
 
